@@ -3,22 +3,23 @@
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from 'react';
 // utils 
-import { getUserTopPath } from '@_utils/login-util';
+import INITIAL from "@_containers/top/initial";
 
 const Main = () => {
   const router = useRouter();
   
   useEffect(() => {
     const checkPage = async () => { 
-      const topPath = await getUserTopPath(); 
-      console.info("*** Main Page *** ", topPath);
-
-      router.push(topPath); 
+      console.info("*** Main Page *** ");
 
     };
     checkPage();
 
   }, [router]);
+
+  return (
+    <div><INITIAL></INITIAL></div>
+  );
 };
 
 export default Main;

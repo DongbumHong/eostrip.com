@@ -9,7 +9,7 @@ import '@_styles/common.css'
 const InitialPage = () => {
   return (
     <div>
-      Top ADMIN Initial Page
+      <h1>WelCome Very Good Golf-Tour</h1>
     </div>
   );
 };
