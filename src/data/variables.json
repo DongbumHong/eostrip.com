@@ -1,0 +1,10 @@
+{
+  "TEST": {
+    "JWT_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ5Zy1tYXJ0IiwidXNlck5hbWUiOiJZRy1NYXJ0IiwiZW1haWwiOiJ5Zy1tYXJ0QCIsImF1dGhvcml0eSI6ImFkbWluIn0.g0s_0EdJ6pisbuG3y6uOLUyY2nos4KIxw_apbajnpA8"
+    },
+  "IN_DB": {
+    "DB_NAME": "YG_MART",
+    "LOGIN_STORE_NAME": "USER_STATUS"
+
+  }
+}

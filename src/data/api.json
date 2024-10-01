@@ -1,0 +1,7 @@
+{
+  "URI": {
+    "BASE_URL": "",
+    "LOGIN": "/login",
+    "LOGOUT": "/logout"
+  }
+}

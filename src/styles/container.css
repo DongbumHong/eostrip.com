@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/****************************************************************************
+  ・ login             ：ログイン関係の画面のスタイル
+  ・ TOP               ：トップ画面関係の画面のスタイル
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+  ・ 
+****************************************************************************/
+
+/* =============================================================================
+/* login：ログイン関係の画面のスタイル
+/* ============================================================================= */
+#contents {
+	width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  #login-contents {
+    width: 100%;
+    margin: 0 auto 30px auto; } }
+
+
+#login-wrap {
+  width: 560px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #FFF;
+  border: solid #DADADA 1px;
+  /* border-radius: 10px; */ }
+
+@media screen and (max-width: 640px) {
+  #login-wrap {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px; } }
+
+#login-header {
+  margin: 0 0 20px 0;
+  text-align: center; }
+
+@media screen and (max-width: 640px) {
+  #login-header img {
+    width: 100%; } }
+
+#login-header p {
+  margin: 3px 0;
+  line-height: 1.6;
+  font-size: 10px;
+  font-size: 1.0rem;
+  text-align: center;
+  color: #A18E5C;
+  font-weight: bold;
+  word-break: break-all; }
+
+.login-form-header {
+  margin: 0 0 10px 0;
+  line-height: 1.6;
+  text-align: left;
+  font-size: 13px; }
+
+.login-form {
+  margin: 0 0 20px 0;
+  text-align: left;
+  overflow: hidden; }
+
+.login-form p {
+  margin: 0; }
+
+.login-form input {
+  width: 100%; }
+
+.p-login-button-border {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px; }
+
+.p-login-button {
+  padding: 1px;
+  height: 50px;
+  width: 120px;}
+
+.p-login-button-w {
+  margin: 0 10px 0 0;
+  padding: 1px;
+  height: 50px;
+  width: 200px;}
+
+login_user_search {
+  width: 100%;
+  border: 3px solid black; }
+
+.p-questionButton-select_login_user_search {
+  position: absolute;
+  bottom: 1px;
+  right: 3px; }
+  .p-questionButton-select_login_user_search .c-button-l {
+    padding: 7px !important; }
+
+.login_user_code_field,
+.login_user_delivery_code_field {
+  width: 10%;
+  padding-left: 1px;
+  font-size: 12px;
+  vertical-align: middle;
+  border:1px solid black; }
+
+.login_user_code_shaded {
+  padding-right: 5px;
+  background: #EEE; 
+  text-align: center;
+  color: #000;}
+
+.login_user_name {
+  width: 60%;
+  padding-left: 2px;
+  font-size: 12px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  word-wrap: normal; 
+  color: #000;
+  border:1px solid black;}
+
+.login_user_code_button {
+  width: 10%;
+  padding-left: 2px;
+  padding-right: 1px;
+  text-align: left;
+  vertical-align: middle; }
+
+.p-user-delivery-search-button {
+  background: none;
+  border-radius: 0 2px 2px 0;
+  color: #FFF;
+  font-weight: bold;
+  height: 33px;
+  position: relative;
+  width: 100%;
+  font-size: 13px;
+  font-size: 1.3rem; }
+
+.login-form-label {
+  font-weight: bold;
+  text-align: left;
+  font-size: 13px;
+  color: #000; }
+
+.login-form-text {
+  text-align: left;
+  font-size: 13px;
+  color: #000; }
+
+.login-form-search-text {
+  text-align: left;
+  font-size: 13px;
+  color: #fff; }
+
+/* =============================================================================
+/* TOP：トップ画面関係の画面のスタイル
+/* ============================================================================= */
+.top-button-text {
+  padding: 2px 0 2px 0;
+}
+
+.top-search-text {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 10px 0 1px 0;
+}
