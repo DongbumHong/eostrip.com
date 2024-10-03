@@ -145,8 +145,8 @@ const InitialPage: React.FC = () => {
 						src={selectedImage.url2}
 						alt={selectedImage.title}
 						layout="intrinsic" // 원본 크기에 맞게 이미지 조정
-						width={800} // 원본 이미지의 너비
-						height={600} // 원본 이미지의 높이
+						width={700} // 원본 이미지의 너비
+						height={4500} // 원본 이미지의 높이
 						objectFit="contain" // 비율 유지
 					/>
 					<h2>{selectedImage.detail1}</h2>
