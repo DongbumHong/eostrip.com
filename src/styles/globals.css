@@ -48,7 +48,16 @@
 	padding: 10px;
 	border-radius: 10px;
 	width: 20%; /* 텍스트가 너무 넓게 퍼지지 않도록 제한 */
-	/* height: auto; */
+    overflow-wrap: break-word; /* 단어가 잘리지 않도록 설정 */
+    word-wrap: break-word; /* 오래된 브라우저를 위한 설정 */
+    white-space: normal; /* 기본 개행 설정 */
+}
+
+@media (max-width: 768px) {
+    .image-overlay {
+        font-size: 8px; /* 작은 화면에서 글자 크기 조정 */
+        padding: 5px; /* 여백 조정 */
+    }
 }
 
 .slider div {

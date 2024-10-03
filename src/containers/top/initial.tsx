@@ -143,8 +143,8 @@ const InitialPage: React.FC = () => {
 							src={image.url}
 							alt={image.title}
 							layout="intrinsic"
-							width={1280}
-							height={600}
+							width={1920}
+							height={1080}
 							objectFit="contain"
 							style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
 						/>
