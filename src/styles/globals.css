@@ -1,10 +1,6 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-body {
-    overflow-x: hidden; /* 전체 페이지에서 좌우 스크롤 제거 */
-}
-
 .slider {
 	position: relative;
 	width: 100vw; /* 전체 화면 너비 */
@@ -71,19 +67,33 @@ body {
     padding: 0; /* 불필요한 패딩 제거 */
 }
 
+
+
+
+
+
+
+body {
+    overflow-x: hidden; /* 전체 페이지에서 좌우 스크롤 제거 */
+    margin: 0; /* 기본 여백 제거 */
+}
+
+.container {
+    padding: 0 200px; /* 좌우에 20px 여백 추가 */
+}
+
 .header {
     text-align: center;
     padding: 20px;
     background-color: #f8f9fa;
 }
 
+.main {
+    margin: 20px 0; /* 상하 여백 추가 */
+}
+
 .footer {
     text-align: center;
     padding: 10px;
     background-color: #f8f9fa;
-}
-
-.info {
-    text-align: left;
-    margin-top: 20px;
 }

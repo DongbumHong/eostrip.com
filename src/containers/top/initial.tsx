@@ -131,50 +131,52 @@ const InitialPage: React.FC = () => {
 	};
 	
 	return (
-		<div className="slider">
-			<Slider ref={sliderRef} {...settings}>
-				{images.map((image, index) => (
-					<div
-						key={index}
-						style={{ position: "relative", height: "auto", display: 'flex', justifyContent: 'center', alignItems: 'center' }} // 슬라이드 중앙 정렬
-						onClick={() => handleImageClick(image)}
-					>
+		<div >
+			<div className="slider">
+				<Slider ref={sliderRef} {...settings}>
+					{images.map((image, index) => (
+						<div
+							key={index}
+							style={{ position: "relative", height: "auto", display: 'flex', justifyContent: 'center', alignItems: 'center' }} // 슬라이드 중앙 정렬
+							onClick={() => handleImageClick(image)}
+						>
+							<Image
+								src={image.url}
+								alt={image.title}
+								layout="intrinsic"
+								width={1280}
+								height={600}
+								objectFit="contain"
+								style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
+							/>
+							<div className="image-overlay">
+								<h3>{image.title}</h3>
+								<p>{image.description}</p>
+							</div>
+						</div>
+					))}
+				</Slider>
+				{selectedImage && (
+					<div className="info">
+						<h2>{selectedImage.title}</h2>
+						<p>{selectedImage.description}</p>
 						<Image
-							src={image.url}
-							alt={image.title}
-							layout="intrinsic"
-							width={1280}
-							height={780}
-							objectFit="contain"
+							src={selectedImage.url2}
+							alt={selectedImage.title}
+							layout="intrinsic" // 원본 크기에 맞게 이미지 조정
+							width={700} // 원본 이미지의 너비
+							height={4500} // 원본 이미지의 높이
+							objectFit="contain" // 비율 유지
 							style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
 						/>
-						<div className="image-overlay">
-							<h3>{image.title}</h3>
-							<p>{image.description}</p>
-						</div>
+						<h2>{selectedImage.detail1}</h2>
+						<p>{selectedImage.detail2}</p>
+						<p>{selectedImage.detail3}</p>
+						<p>{selectedImage.detail4}</p>
+						<p>{selectedImage.detail5}</p>
 					</div>
-				))}
-			</Slider>
-			{selectedImage && (
-				<div className="info">
-					<h2>{selectedImage.title}</h2>
-					<p>{selectedImage.description}</p>
-					<Image
-						src={selectedImage.url2}
-						alt={selectedImage.title}
-						layout="intrinsic" // 원본 크기에 맞게 이미지 조정
-						width={700} // 원본 이미지의 너비
-						height={4500} // 원본 이미지의 높이
-						objectFit="contain" // 비율 유지
-						style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
-					/>
-					<h2>{selectedImage.detail1}</h2>
-					<p>{selectedImage.detail2}</p>
-					<p>{selectedImage.detail3}</p>
-					<p>{selectedImage.detail4}</p>
-					<p>{selectedImage.detail5}</p>
-				</div>
-			)}
+				)}
+			</div>
 		</div>
 	);
 };
