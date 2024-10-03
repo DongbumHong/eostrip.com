@@ -136,20 +136,20 @@ const InitialPage: React.FC = () => {
 				{images.map((image, index) => (
 					<div
 						key={index}
-						style={{ position: "relative", height: "auto" }} // 높이를 자동으로 설정
+						style={{ position: "relative", height: "auto", display: 'flex', justifyContent: 'center', alignItems: 'center' }} // 슬라이드 중앙 정렬
 						onClick={() => handleImageClick(image)}
 					>
 						<Image
 							src={image.url}
 							alt={image.title}
-							layout="responsive"
-							width={1920}
-							height={1080}
-							objectFit="cover"
+							layout="intrinsic"
+							width={1280}
+							height={780}
+							objectFit="contain"
 							style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
 						/>
 						<div className="image-overlay">
-							<h1>{image.title}</h1>
+							<h3>{image.title}</h3>
 							<p>{image.description}</p>
 						</div>
 					</div>
