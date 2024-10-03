@@ -13,7 +13,7 @@
 }
 
 .slick-dots {
-    bottom: 120px; /* 페이지 네이션 점을 슬라이더와 가까운 위치로 설정 */
+    bottom: 50px; /* 페이지 네이션 점을 슬라이더와 가까운 위치로 설정 */
     margin: 0; /* 점 주변의 불필요한 여백 제거 */
     padding: 0; /* 점 주변의 패딩 제거 */
 }
@@ -55,7 +55,7 @@
 
 @media (max-width: 768px) {
     .image-overlay {
-        font-size: 12px; /* 작은 화면에서 글자 크기 조정 */
+        font-size: 10px; /* 작은 화면에서 글자 크기 조정 */
         padding: 5px; /* 여백 조정 */
     }
 }
