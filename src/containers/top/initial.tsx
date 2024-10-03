@@ -149,7 +149,7 @@ const InitialPage: React.FC = () => {
 							style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
 						/>
 						<div className="image-overlay">
-							<p>{image.title}</p>
+							<h3>{image.title}</h3>
 							<p>{image.description}</p>
 						</div>
 					</div>
