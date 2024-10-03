@@ -98,6 +98,23 @@ const InitialPage: React.FC = () => {
 		afterChange: (current: number) => setCurrentIndex(current),
 		autoplay: true,
 		autoplaySpeed: 5000, // 5초마다 슬라이드
+		responsive: [
+			{
+				breakpoint: 768, // 768px 이하에서
+				settings: {
+					slidesToShow: 1, // 슬라이드 1개 표시
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 1024, // 1024px 이하에서
+				settings: {
+					slidesToShow: 1, // 슬라이드 1개 표시
+					slidesToScroll: 1,
+				},
+			},
+			// 추가적인 브레이크포인트 설정 가능
+		],
 	};
 
 	useEffect(() => {
@@ -119,7 +136,7 @@ const InitialPage: React.FC = () => {
 				{images.map((image, index) => (
 					<div
 						key={index}
-						style={{ position: "relative", height: "100%" }} // 높이를 100%로 설정
+						style={{ position: "relative", height: "auto" }} // 높이를 자동으로 설정
 						onClick={() => handleImageClick(image)}
 					>
 						<Image
@@ -129,6 +146,7 @@ const InitialPage: React.FC = () => {
 							width={1920}
 							height={1080}
 							objectFit="cover"
+							style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
 						/>
 						<div className="image-overlay">
 							<h1>{image.title}</h1>
@@ -148,6 +166,7 @@ const InitialPage: React.FC = () => {
 						width={700} // 원본 이미지의 너비
 						height={4500} // 원본 이미지의 높이
 						objectFit="contain" // 비율 유지
+						style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
 					/>
 					<h2>{selectedImage.detail1}</h2>
 					<p>{selectedImage.detail2}</p>
