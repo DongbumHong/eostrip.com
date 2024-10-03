@@ -8,22 +8,22 @@ config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  description: "Welcome To YG-Mart",
-  icons: {
+	description: "Welcome To YG-Mart",
+	icons: {
 		icon: "/favicon.ico",
 	},
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div>{children}</div>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className={inter.className}>
+				<div>{children}</div>
+			</body>
+		</html>
+	);
 }
