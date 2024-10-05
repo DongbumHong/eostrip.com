@@ -21,14 +21,14 @@ const CONTACT: React.FC = () => {
 					<div className="spacer contact-container"></div>
 					<h1>여행문의</h1>
 					<div className="columns">
-						<div className="column center-align contact-container">
+						<div className="column left-align contact-container" >
 							<div>
+								<h3>에오스 골프투어</h3>
 								<p>
 									골프 여행의 모든 것<br />
-									에오스 골프투어입니다.<br />
-									채팅상담/전화상담 가능 <br /><br />
-									대표전화:+81-92-285-2430<br />
-									Mobile:+81-90-3327-9397<br />
+									채팅/전화상담 가능 <br /><br />
+									・대표전화<br />　+81-92-285-2430<br />
+									・Mobile<br />　+81-90-3327-9397<br />
 								</p>
 							</div><br /><br />
 							<div className="center-align">
@@ -41,7 +41,7 @@ const CONTACT: React.FC = () => {
 								</ul>
 							</div>
 						</div>
-						<div className="column contact-container">
+						<div className="column contact-form contact-container">
 							<div className="spacer-large">
 								<form className="contact-form">
 									<div className="name-fields"> {/* 이름 입력 필드들을 감싸는 div */}
@@ -51,7 +51,7 @@ const CONTACT: React.FC = () => {
 										</div>
 										<div className="form-group half-width">
 											<label>명 (필수)</label>
-											<input type="text" name="last-name" required className="input-field" />
+											<input type=" contact-formtext" name="last-name" required className="input-field" />
 										</div>
 									</div>
 									<div className="form-group">

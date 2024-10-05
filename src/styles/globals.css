@@ -567,7 +567,7 @@ margin: 20px 0; /* 상하 여백 */
     }
 
     .left-align {
-        flex: 1; /* 비율 1 */
+        flex: 3; /* 비율 1 */
     }
 
     .center-align {
@@ -575,7 +575,7 @@ margin: 20px 0; /* 상하 여백 */
     }
 
     .contact-form {
-        flex: 4; /* 비율 4 */
+        flex: 5; /* 비율 4 */
     }
 
     .column {
