@@ -144,7 +144,7 @@ const Main: React.FC = () => {
 	
 	return (
 		<div id="home">			
-			<div className="slider">
+			<div className="slider"><br/>
 				<Slider ref={sliderRef} {...settings}>
 					{images.map((image, index) => (
 						<div

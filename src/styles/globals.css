@@ -202,12 +202,12 @@ body {
 
 .navbar {
 	/* background-color: transparent; */
-	/* background-color: #f8f9fa;;  */
+	background-color: #f8f9fa;; 
 	overflow: hidden;
 	position: fixed;
 	top: 0;
 	max-width: 1200px; /* 최대 너비 설정 */
-	width: calc(100% - 20px); /* 전체 너비에서 여백 제외 */
+	width: calc(100%); /* 전체 너비에서 여백 제외 */
 	z-index: 1000;
 	display: flex;
 	align-items: center;
