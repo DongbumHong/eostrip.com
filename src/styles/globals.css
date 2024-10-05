@@ -215,15 +215,25 @@ body {
 	align-items: center; /* 수평 중앙 정렬 */
 	/* padding: 0px 20px; */
 }
-/* 
-@media (max-width: 768px) {
+
+/* @media (max-width: 768px) {
 	.navbar {
-		padding: 0 16px;	모바일에서 좌우 여백 추가 
-		left: 0;	모바일에서는 왼쪽 여백 없애기 
-		right: 0;	모바일에서는 오른쪽 여백 없애기 
+		padding: 0 16px;	모바일에서 좌우 여백 추가
+		left: 0;	모바일에서는 왼쪽 여백 없애기
+		right: 0;	모바일에서는 오른쪽 여백 없애기
+		font-size: 36px;
 	}
+} */
+
+.menu-toggle {
+    font-size: 24px; /* 기본 크기 */
 }
-*/
+
+@media (max-width: 780px) {
+    .menu-toggle {
+        font-size: 32px; /* 모바일에서 더 크게 */
+    }
+}
 
 .navbar img {
 	height: 40px;
@@ -248,20 +258,21 @@ body {
 	transform: translateY(-50%);
 	width: 1px;
 	height: 20px;
-	background-color: #4A4A4A; /* 선 색상도 진한 회색으로 */
 }
 
 .navbar a:hover {
-	color: #FFFFFF; /* 마우스 오버 시 흰색으로 변경 */
-	background-color: #4A4A4A; /* 배경색을 기존 메뉴 색으로 설정 */
+	color: #4A90E2; /* 마우스 오버 시 흰색으로 변경 */
+	/* 배경색을 기존 메뉴 색으로 설정 */
+	/* background-color: #4A4A4A;  */
 }
 .navbar a.active {
 	color: #000; /* 선택된 메뉴의 색상 (검은색) */
 	font-weight: bold; /* 선택된 메뉴도 굵게 설정 */
 }
 .navbar a.active:hover {
-	color: #FFFFFF; /* "전체메뉴" 항목 활성화 시 색상 */
-	background-color: #4A4A4A; /* 배경색 유지 */
+	color: #4A90E2; /* "전체메뉴" 항목 활성화 시 색상 */
+	/* 배경색 유지 */
+	/* background-color: #4A4A4A;  */
 }
 
 .swiper-container {
@@ -436,6 +447,21 @@ footer {
 	padding: 20px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	z-index: 999; /* 메뉴바보다 위로 */
+}
+
+.full-menu a:hover {
+	color: #4A90E2; /* 마우스 오버 시 흰색으로 변경 */
+	/* 배경색을 기존 메뉴 색으로 설정 */
+	/* background-color: #4A4A4A;  */
+}
+.full-menu a.active {
+	color: #000; /* 선택된 메뉴의 색상 (검은색) */
+	font-weight: bold; /* 선택된 메뉴도 굵게 설정 */
+}
+.full-menu a.active:hover {
+	color: #4A90E2; /* "전체메뉴" 항목 활성화 시 색상 */
+	/* 배경색 유지 */
+	/* background-color: #4A4A4A;  */
 }
 
 .full-menu a {

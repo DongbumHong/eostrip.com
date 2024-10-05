@@ -40,8 +40,8 @@ export default function RootLayout({
 				<div className="container">
 					{/* <header className="header"> */}
 					<div className="navbar">
-						<Image src={logo} alt="로고" width={40} height={40} />
-						<Link href="/#home"><h3>에오스 골프투어</h3></Link>
+						<Link href="/#home"><Image src={logo} alt="로고" width={40} height={40} /></Link>
+						<h3>에오스 골프투어</h3>
 						{!isMobile && ( // 모바일이 아닐 때만 기본 메뉴 표시
 							<>
 								<Link href="/#premium">프리미엄 상품</Link>
@@ -52,7 +52,7 @@ export default function RootLayout({
 						)}
 
 						{isMobile && ( // 모바일일 때만 메뉴 토글 버튼 표시
-							<a href="#full" id="menu-toggle" className="active" onClick={handleToggleMenu}>
+							<a href="#full" id="menu-toggle" className="active menu-toggle" onClick={handleToggleMenu}>
 								{isMenuVisible ? '≣' : '≣'}
 							</a>
 						)}
