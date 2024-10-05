@@ -1,6 +1,7 @@
 // Next.js React
 'use client'
 import '@_styles//globals.css'
+import '@_styles//common3.css'
 import React from 'react'; 
 import { useState, useRef, useEffect } from 'react';
 import Slider from "react-slick";
@@ -19,6 +20,13 @@ import Img3 from "@_images/main/1920299_2.jpg";
 import Img4 from "@_images/main/1932778_2.jpg";
 import Img5 from "@_images/main/1953128_2.jpg";
 import Img6 from "@_images/main/1969201_2.jpg";
+
+import subImg1 from "@_images/sub/golfclub01.jpg";
+import subImg2 from "@_images/sub/golfclub02.jpg";
+import subImg3 from "@_images/sub/golfclub03.jpg";
+import subImg4 from "@_images/sub/golfclub04.jpg";
+import subImg5 from "@_images/sub/golfclub05.jpg";
+
 
 interface ImageInfo {
 	url: string;
@@ -131,51 +139,109 @@ const InitialPage: React.FC = () => {
 	};
 	
 	return (
-		<div className="slider">
-			<Slider ref={sliderRef} {...settings}>
-				{images.map((image, index) => (
-					<div
-						key={index}
-						style={{ position: "relative", height: "auto", display: 'flex', justifyContent: 'center', alignItems: 'center' }} // 슬라이드 중앙 정렬
-						onClick={() => handleImageClick(image)}
-					>
+		<div>
+			<div className="slider">
+				<Slider ref={sliderRef} {...settings}>
+					{images.map((image, index) => (
+						<div
+							key={index}
+							style={{ position: "relative", height: "auto", display: 'flex', justifyContent: 'center', alignItems: 'center' }} // 슬라이드 중앙 정렬
+							onClick={() => handleImageClick(image)}
+						>
+							<Image
+								src={image.url}
+								alt={image.title}
+								layout="intrinsic"
+								width={1920}
+								height={1080}
+								objectFit="contain"
+								style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
+							/>
+							<div className="image-overlay">
+								<h3>{image.title}</h3>
+								<p>{image.description}</p>
+							</div>
+						</div>
+					))}
+				</Slider>
+				{selectedImage && (
+					<div className="info">
+						<h2>{selectedImage.title}</h2>
+						<p>{selectedImage.description}</p>
 						<Image
-							src={image.url}
-							alt={image.title}
-							layout="intrinsic"
-							width={1920}
-							height={1080}
-							objectFit="contain"
+							src={selectedImage.url2}
+							alt={selectedImage.title}
+							layout="intrinsic" // 원본 크기에 맞게 이미지 조정
+							width={700} // 원본 이미지의 너비
+							height={4500} // 원본 이미지의 높이
+							objectFit="contain" // 비율 유지
 							style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
 						/>
-						<div className="image-overlay">
-							<h3>{image.title}</h3>
-							<p>{image.description}</p>
-						</div>
+						<h2>{selectedImage.detail1}</h2>
+						<p style={{ whiteSpace: 'pre-wrap' }}>{selectedImage.detail2}</p>
+						<p>{selectedImage.detail3}</p>
+						<p>{selectedImage.detail4}</p>
+						<p>{selectedImage.detail5}</p>
 					</div>
-				))}
-			</Slider>
-			{selectedImage && (
-				<div className="info">
-					<h2>{selectedImage.title}</h2>
-					<p>{selectedImage.description}</p>
-					<Image
-						src={selectedImage.url2}
-						alt={selectedImage.title}
-						layout="intrinsic" // 원본 크기에 맞게 이미지 조정
-						width={700} // 원본 이미지의 너비
-						height={4500} // 원본 이미지의 높이
-						objectFit="contain" // 비율 유지
-						style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
-					/>
-					<h2>{selectedImage.detail1}</h2>
-					<p style={{ whiteSpace: 'pre-wrap' }}>{selectedImage.detail2}</p>
-					<p>{selectedImage.detail3}</p>
-					<p>{selectedImage.detail4}</p>
-					<p>{selectedImage.detail5}</p>
+				)}
+			</div>
+			<div className="sub01_wrap group01">
+				<div className="header_01">
+					<h1>베리굿 프로모션</h1>
+					<p>이벤트와 할인이 가득!</p>
 				</div>
-			)}
+				<div className="image-gallery">
+					<div className="image-container">
+						<Image src={subImg1} alt="샘플 이미지 1"/>
+						<div className="image-text">후쿠오카 시내 골프</div>
+					</div>
+					<div className="image-container">
+						<Image src={subImg2} alt="샘플 이미지 2"/>
+						<div className="image-text">카고시마 케도인 온천골프</div>
+					</div>
+					<div className="image-container">
+						<Image src={subImg3} alt="샘플 이미지 3"/>
+						<div className="image-text">카고시마 그린힐 온천골프</div>
+					</div>
+					<div className="image-container">
+						<Image src={subImg4} alt="샘플 이미지 4"/>
+						<div className="image-text">후쿠오카 센츄리 골프</div>
+					</div>
+					<div className="image-container">
+						<Image src={subImg5} alt="샘플 이미지 5"/>
+						<div className="image-text">후쿠오카 VIP 명문 골프</div>
+					</div>
+				</div>
+			</div><div className="sub01_wrap group01">
+				<div className="header_01">
+					<h1>추천 골프여행</h1>
+					<p>다양한 코스를 즐길 수 있는 일본 골프여행</p>
+				</div>
+				<div className="image-gallery">
+					<div className="image-container">
+						<Image src={subImg3} alt="샘플 이미지 1"/>
+						<div className="image-text">아소(阿蘇)그랑비리오 골프</div>
+					</div>
+					<div className="image-container">
+						<Image src={subImg4} alt="샘플 이미지 2"/>
+						<div className="image-text">후쿠오카 센츄리 골프</div>
+					</div>
+					<div className="image-container">
+						<Image src={subImg5} alt="샘플 이미지 3"/>
+						<div className="image-text">카고시마 케도인 온천골프</div>
+					</div>
+					<div className="image-container">
+						<Image src={subImg1} alt="샘플 이미지 4"/>
+						<div className="image-text">후쿠오카 시내 골프</div>
+					</div>
+					<div className="image-container">
+						<Image src={subImg2} alt="샘플 이미지 5"/>
+						<div className="image-text">카고시마 그린힐 온천골프</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		
 	);
 };
 

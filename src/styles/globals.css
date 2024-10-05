@@ -109,7 +109,7 @@ body {
 .container {
     max-width: 1200px; /* 최대 너비 설정 */
     width: 100%; /* 너비를 100%로 설정 */
-    padding: 0 10px; /* 양쪽 여백 추가 */
+    padding: 24px 10px; /* 양쪽 여백 추가 */
     padding-right: 20px; /* 양쪽 여백 추가 */
     display: flex;
     flex-direction: column;

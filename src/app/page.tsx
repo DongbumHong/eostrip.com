@@ -18,33 +18,27 @@ const Main = () => {
 
 	}, [router]);
 
+	const [isBrowser, setIsBrowser] = useState(false);
+
+    useEffect(() => {
+        // 브라우저 환경에서만 window 객체에 접근 가능하도록 설정
+        setIsBrowser(true);
+    }, []);
+
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
+
 	return (
 		<div className={"container"}>
-			<header className={"header"}>
-				<h1>Very Good Golf Tour Japan</h1>
-			</header>
-
 			<main className={"main"}>
 				<div><INITIAL></INITIAL></div>
-				{/* <div className={"details"}>
-					<h2>이미지 상세 화면</h2>
-					<p>여기에 상세 정보를 넣을 수 있습니다.</p>
-				</div> */}
 			</main>
-
-			<footer className={"footer"}>
-				<div className={"footerRow"}>
-					<p>여행문의: example@example.com</p>
-					<p>전화번호(한국): +82-2-1234-5678</p>
-					<p>전화번호(일본): +81-92-1234-5678</p>
-				</div>
-				<div className={"footerRow"}>
-					<p>주소: 日本福岡県福岡市 123</p>
-				</div>
-				<div className={"footerRow"}>
-					<p>© 2024 Company. Very Good Golf Tour Japan</p>
-				</div>
-			</footer>
+			<button className="floating-button" >문의하기</button>
+			<button className="scrollToTop" onClick={scrollToTop}>↑</button>
 		</div>
 	);
 };
