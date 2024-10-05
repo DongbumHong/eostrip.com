@@ -61,7 +61,7 @@ const images: ImageInfo[] = [
 		title: '◆ 카고시마 그린힐 온천골프 ◆', 
 		description: '다양한 코스를 즐길 수 있는 일본 카고시마 그린힐 온천골프 여행', 
 		detail1: '●[카고시마골프] 그린힐 호텔&컨트리 클럽 3박 4일 ', 
-		detail2: '편안하고 잘 관리된 골프장과 가고시마 최고의 가성비를 자랑하는 그린힐 골프텔! 카트 페어웨이 진입가능!  \n　 평평하고 조망이 트여있는 코스에 홀마다 일본의 색채가 물씬 느껴지는 수목들로 꾸며져 있어 남국의 정취를 느낄 수 있습니다.', 
+		detail2: '편안하고 잘 관리된 골프장과 가고시마 최고의 가성비를 자랑하는 그린힐 골프텔! 카트 페어웨이 진입가능!	\n　 평평하고 조망이 트여있는 코스에 홀마다 일본의 색채가 물씬 느껴지는 수목들로 꾸며져 있어 남국의 정취를 느낄 수 있습니다.', 
 		detail3: '★ 상품가는 100엔=900원 기준으로 계산되었습니다. 급격한 환율변동시 상품가 조정됩니다. ★', 
 		detail4: '※​ 호텔 싱글차지 1인1박당 19,000~21,500엔', 
 		detail5: '※​ 2인플레이 추가 금액 5000엔(18홀/1인), 3인 플레이 추가금액 1000엔(18홀/1인)' },
@@ -85,7 +85,7 @@ const images: ImageInfo[] = [
 		title: '◆ 아소(阿蘇)그랑비리오 골프 ◆', 
 		description: '다양한 코스를 즐길 수 있는 아소(阿蘇)그랑비리오 골프 여행', 
 		detail1: '●[ ★구마모토직항 ★] 아소(阿蘇)그랑비리오 골프 4일(54H)-토 출발', 
-		detail2: '・아소 활화산 초입에 자리잡은 골프 리조트로 아놀드 파머가 설계한 36홀의 코스를 가지고 있습니다. \n　호텔, 골프, 온천 모두 만족하실 수 있는 좋은 상품입니다. 특히 온천은 활화산의 영향을 받아 수질이 좋고인기가 높습니다.  ', 
+		detail2: '・아소 활화산 초입에 자리잡은 골프 리조트로 아놀드 파머가 설계한 36홀의 코스를 가지고 있습니다. \n　호텔, 골프, 온천 모두 만족하실 수 있는 좋은 상품입니다. 특히 온천은 활화산의 영향을 받아 수질이 좋고인기가 높습니다.	', 
 		detail3: '★ 상품가는 100엔=900원 기준으로 계산되었습니다. 급격한 환율변동시 상품가 조정됩니다. ★', 
 		detail4: '※​ 호텔 싱글차지 1인1박당 19,000~21,500엔', 
 		detail5: '※​ 2인플레이 추가 금액 5000엔(18홀/1인), 3인 플레이 추가금액 1000엔(18홀/1인)' },
@@ -99,7 +99,7 @@ const InitialPage: React.FC = () => {
 	const settings = {
 		dots: true,
 		infinite: true,
-		speed: 500,
+		speed: 2000,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		afterChange: (current: number) => setCurrentIndex(current),
@@ -124,6 +124,18 @@ const InitialPage: React.FC = () => {
 		],
 	};
 
+	const handleNext = () => {
+		setCurrentIndex((prevIndex) =>
+			prevIndex === images.length - 1 ? 0 : prevIndex + 1
+		);
+	};
+	
+	const handlePrev = () => {
+		setCurrentIndex((prevIndex) =>
+			prevIndex === 0 ? images.length - 1 : prevIndex - 1
+		);
+	};
+		
 	useEffect(() => {
 		const interval = setInterval(() => {
 			if (sliderRef.current) {
@@ -138,7 +150,7 @@ const InitialPage: React.FC = () => {
 	};
 	
 	return (
-		<div>
+		<div>			
 			<div className="slider">
 				<Slider ref={sliderRef} {...settings}>
 					{images.map((image, index) => (
@@ -147,6 +159,8 @@ const InitialPage: React.FC = () => {
 							style={{ position: "relative", height: "auto", display: 'flex', justifyContent: 'center', alignItems: 'center' }} // 슬라이드 중앙 정렬
 							onClick={() => handleImageClick(image)}
 						>
+							{/* ◀ 이전 버튼 */}
+							<button className="prev-button" onClick={() => sliderRef.current?.slickPrev()}>◀</button>
 							<Image
 								src={image.url}
 								alt={image.title}
@@ -157,9 +171,12 @@ const InitialPage: React.FC = () => {
 								style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
 							/>
 							<div className="image-overlay">
+								
 								<h3>{image.title}</h3>
 								<p>{image.description}</p>
 							</div>
+							{/* ▶ 다음 버튼 */}
+							<button className="next-button" onClick={() => sliderRef.current?.slickNext()}>▶</button>
 						</div>
 					))}
 				</Slider>
@@ -182,18 +199,18 @@ const InitialPage: React.FC = () => {
 						<p>{selectedImage.detail4}</p>
 						<p>{selectedImage.detail5}</p>
 					</div>
-				)}
+				)}				
 			</div>
-			<div className="sub01_wrap group01">
+			<div className="info">
 				<div className="header_01">
 					<h1>베리굿 프로모션</h1>
 					<p>이벤트와 할인이 가득!</p>
 				</div>
 				<div className="image-gallery">
-					<div className="image-container">
+					{/* <div className="image-container">
 						<Image src={subImg1} alt="샘플 이미지 1"/>
 						<div className="image-text">후쿠오카 시내 골프</div>
-					</div>
+					</div> */}
 					<div className="image-container">
 						<Image src={subImg2} alt="샘플 이미지 2"/>
 						<div className="image-text">카고시마 케도인 온천골프</div>
@@ -211,7 +228,7 @@ const InitialPage: React.FC = () => {
 						<div className="image-text">후쿠오카 VIP 명문 골프</div>
 					</div>
 				</div>
-			</div><div className="sub01_wrap group01">
+			</div><div className="info">
 				<div className="header_01">
 					<h1>추천 골프여행</h1>
 					<p>다양한 코스를 즐길 수 있는 일본 골프여행</p>
@@ -229,10 +246,10 @@ const InitialPage: React.FC = () => {
 						<Image src={subImg5} alt="샘플 이미지 3"/>
 						<div className="image-text">카고시마 케도인 온천골프</div>
 					</div>
-					<div className="image-container">
+					{/* <div className="image-container">
 						<Image src={subImg1} alt="샘플 이미지 4"/>
 						<div className="image-text">후쿠오카 시내 골프</div>
-					</div>
+					</div> */}
 					<div className="image-container">
 						<Image src={subImg2} alt="샘플 이미지 5"/>
 						<div className="image-text">카고시마 그린힐 온천골프</div>

@@ -33,8 +33,8 @@ const Main = () => {
 	};
 
 	return (
-		<div className={"container"}>
-			<main className={"main"}>
+		<div>
+			<main className="main">
 				<div><INITIAL></INITIAL></div>
 			</main>
 			<button className="floating-button" >문의하기</button>
