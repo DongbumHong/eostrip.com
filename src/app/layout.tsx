@@ -33,6 +33,10 @@ export default function RootLayout({
 	const handleToggleMenu = () => {
 		setMenuVisible((prev) => !prev);
 	};
+
+	const handleCloseMenu = () => {
+		setMenuVisible(false); // 메뉴를 닫음
+	};
 	
 	return (
 		<html lang="en">
@@ -63,10 +67,10 @@ export default function RootLayout({
 					{isMobile && isMenuVisible && (
 						<div className="full-menu" id="full-menu">
 							<ul>
-								<Link href="/#premium" onClick={handleToggleMenu}><li>프리미엄 상품</li></Link>
-								<Link href="/#golf-tour" onClick={handleToggleMenu}><li>골프투어</li></Link>
-								<Link href="/#kyushu-tour" onClick={handleToggleMenu}><li>큐슈관광</li></Link>
-								<Link href="/#contact" onClick={handleToggleMenu}><li>문의하기</li></Link>
+								<Link href="/#premium" onClick={handleCloseMenu}><li>프리미엄 상품</li></Link>
+								<Link href="/#golf-tour" onClick={handleCloseMenu}><li>골프투어</li></Link>
+								<Link href="/#kyushu-tour" onClick={handleCloseMenu}><li>큐슈관광</li></Link>
+								<Link href="/#contact" onClick={handleCloseMenu}><li>문의하기</li></Link>
 							</ul>
 						</div>
 					)}

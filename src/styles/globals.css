@@ -258,6 +258,8 @@ body {
 	transform: translateY(-50%);
 	width: 1px;
 	height: 20px;
+	/* 선 색상도 진한 회색으로 */
+	/* background-color: #4A4A4A;  */
 }
 
 .navbar a:hover {
