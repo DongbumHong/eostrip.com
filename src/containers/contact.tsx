@@ -30,8 +30,8 @@ const CONTACT: React.FC = () => {
                             골프 여행의 모든 것<br />
                             에오스 골프투어입니다.<br />
 							채팅상담/전화상담 가능 <br /><br />
-                            대표전화 + 81-92-285-2430<br />
-                            Mobile : + 81-90-3327-9397<br />
+                            대표전화: <br />+81-92-285-2430<br />
+                            Mobile: <br />+81-90-3327-9397<br />
                             </p>
 						</div><br />
                         <div className="left-align">

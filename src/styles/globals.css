@@ -53,9 +53,6 @@
 	white-space: normal; /* 기본 개행 설정 */
 }
 
-@media (max-width: 768px) {
-}
-
 .slider div {
 	position: relative;
 	height: auto; /* 각 슬라이드가 동일한 높이로 설정되도록 보장 */
@@ -85,7 +82,8 @@
 	}
 
 	.container {
-		padding: 0 10px; /* 모바일 환경에서는 여백을 줄임 */
+		padding: 0; /* 불필요한 패딩 제거 */
+        margin: 0; /* 불필요한 마진 제거 */
 	}
 }
 
@@ -136,6 +134,7 @@
 		padding: 0 30px; 
 }
 
+
 body {
 	overflow-x: hidden; /* 전체 페이지에서 좌우 스크롤 제거 */
 	margin: 0; /* 기본 여백 제거 */
@@ -147,6 +146,7 @@ body {
 	font-family: Arial, sans-serif;
 	flex-direction: column;
 	overflow-y: scroll; /* 세로 스크롤 항상 표시 */
+	-webkit-overflow-scrolling: touch; /* 부드러운 스크롤 */
 }
 
 /* 스크롤바 스타일 */
