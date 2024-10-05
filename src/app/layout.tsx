@@ -1,11 +1,10 @@
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import '@_styles//globals.css'
-import '@_styles//common3.css'
 import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
-import logo from "@_images/sub/logo.jpg";
+import logo from "@_images/sub/logo.png";
 
 import kakao from "@_images/sns/kakao.jpg";
 import line from "@_images/sns/line.jpg";
@@ -35,7 +34,8 @@ export default function RootLayout({
 				<div className={"container"}>
 					<header className="header">
 						<div className="navbar">
-							<Image src={logo} alt="로고" />
+							<Image src={logo} alt="로고" width={40} height={40} />
+							<h3>EOS GOLF TOUR</h3>
 							<a href="#full" id="menu-toggle" className="active">≣전체메뉴</a>
 							<a href="#about">프리미엄 상품</a>
 							<a href="#services">골프투어</a>
@@ -58,17 +58,17 @@ export default function RootLayout({
 				<div className="header_sns">
 					<ul className="ftr_social">
 						<li><a href="https://story.kakao.com/ch/verygoodtour" target="_blank" className="f_kakao"><Image src={kakao} alt="kakao"/></a></li>
-						<li><a href="https://pf.kakao.com/_zbjGE" target="_blank" className="f_pinter"><Image src={line} alt="line"/></a></li>
-						<li><a href="https://www.facebook.com/verygoodtour" target="_blank" className="f_facebook"><Image src={instar} alt="instar"/></a></li>
-						<li><a href="https://www.instagram.com/verygoodtour_official" target="_blank" className="f_insta"><Image src={facebook} alt="facebook"/></a></li>
-						<li><a href="https://blog.naver.com/vgt0901" target="_blank" className="f_blog"><Image src={youtube} alt="youtube"/></a></li>
+						<li><a href="https://blog.naver.com/vgt0901" target="_blank" className="f_pinter"><Image src={line} alt="line"/></a></li>
+						<li><a href="https://www.instagram.com/verygoodtour_official" target="_blank" className="f_facebook"><Image src={instar} alt="instar"/></a></li>
+						<li><a href="https://www.facebook.com/verygoodtour" target="_blank" className="f_insta"><Image src={facebook} alt="facebook"/></a></li>
+						<li><a href="https://www.youtube.com/user/verygoodtourofficial" target="_blank" className="f_blog"><Image src={youtube} alt="youtube"/></a></li>
 					</ul>
 				</div>
 
 				<footer className={"sub_wrap newfooter"}>
 					<div className="footer_bigdiv">
 						<div className="footer_head">
-							<h3>에오스골프투어</h3>
+							<h2>EOS GOLF TOUR</h2>
 						</div>
 					</div>
 					<span className="footer_info">

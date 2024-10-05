@@ -1,7 +1,6 @@
 // Next.js React
 'use client'
 import '@_styles//globals.css'
-import '@_styles//common3.css'
 import React from 'react'; 
 import { useState, useRef, useEffect } from 'react';
 import Slider from "react-slick";
