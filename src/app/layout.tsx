@@ -40,7 +40,7 @@ export default function RootLayout({
 	
 	return (
 		<html lang="en">
-			<body>
+			<body id="home">
 				<div className="container">
 					{/* <header className="header"> */}
 					<div className="navbar">
