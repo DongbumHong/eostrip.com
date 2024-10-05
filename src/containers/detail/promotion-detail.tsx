@@ -1,0 +1,180 @@
+// Next.js React
+'use client'
+import '@_styles//globals.css'
+import React from 'react'; 
+import { useState, useRef, useEffect } from 'react';
+import Slider from "react-slick";
+
+import Image from 'next/image';
+import Img1 from "@_images/main/1859749_2.jpg";
+import Img2 from "@_images/main/1865675_2.jpg";
+import Img3 from "@_images/main/1920299_2.jpg";
+import Img4 from "@_images/main/1932778_2.jpg";
+import Img5 from "@_images/main/1953128_2.jpg";
+import Img6 from "@_images/main/1969201_2.jpg";
+
+import subImg1 from "@_images/sub/golfclub01.jpg";
+import subImg2 from "@_images/sub/golfclub02.jpg";
+import subImg3 from "@_images/sub/golfclub03.jpg";
+
+interface ImageInfo {
+	url: string;
+	url2: string;
+	alt: string;
+	title: string;
+	description: string;
+	detail1: string;
+	detail2: string;
+	detail3: string;
+	detail4: string;
+	detail5: string;
+}
+
+const images: ImageInfo[] = [
+	{ url: Img1.src, url2: Img1.src, alt: 'Image 1', 
+		title: '◆ 키타큐슈 시모노세키 여행 ◆', 
+		description: '편안하게 즐길 수 있는 키타큐슈 시모노세키 여행', 
+		detail1: '시모노세키 4성 호텔 4일', 
+		detail2: '・시내호텔, 전일정 전용차량 및 한국인 드라이빙 가이드 안내. \n　3박 4회 온천. 문의 바랍니다.', 
+		detail3: '・★ 상품가는 100엔=900원 기준으로 계산되었습니다. 급격한 환율변동시 상품가 조정됩니다. ★', 
+		detail4: '※​ 호텔 싱글차지 1인1박당 19,000~21,500엔', 
+		detail5: '※​ 2인 추가 금액 5000엔, 3인 추가금액 1000엔' },
+	{ url: subImg1.src, url2: Img2.src, alt: 'Image 2', 
+		title: '◆ 카고시마 케도인 온천골프 ◆', 
+		description: '다양한 코스를 즐길 수 있는 일본 카고시마 케도인 온천골프 여행', 
+		detail1: '●항공제외특가★ 케도인(祁答院) 리조트 4일', 
+		detail2: '・일본 남자프로 개막전"토오켄 코퍼레이션 컵"이 개최 된 가고시마 제일의 명문코스. \n　그리고 숲과 호반이 어우러진 호텔과 온천. 최상의 리조트 골프의 진수를 만끽하실 수 있습니다.', 
+		detail3: '※한 겨울에도 페어웨이는 양잔디로 되어 있어 푸른 필드위에서의 라운딩을 만끽 하실 수 있습니다.', 
+		detail4: '※​ 호텔 싱글차지 1인1박당 19,000~21,500엔', 
+		detail5: '※​ 2인플레이 추가 금액 5000엔(18홀/1인), 3인 플레이 추가금액 1000엔(18홀/1인)' },
+	{ url: Img2.src, url2: Img3.src, alt: 'Image 3', 
+		title: '◆ 카고시마 그린힐 온천골프 ◆', 
+		description: '다양한 코스를 즐길 수 있는 일본 카고시마 그린힐 온천골프 여행', 
+		detail1: '●[카고시마골프] 그린힐 호텔&컨트리 클럽 3박 4일 ', 
+		detail2: '편안하고 잘 관리된 골프장과 가고시마 최고의 가성비를 자랑하는 그린힐 골프텔! 카트 페어웨이 진입가능!	\n　 평평하고 조망이 트여있는 코스에 홀마다 일본의 색채가 물씬 느껴지는 수목들로 꾸며져 있어 남국의 정취를 느낄 수 있습니다.', 
+		detail3: '★ 상품가는 100엔=900원 기준으로 계산되었습니다. 급격한 환율변동시 상품가 조정됩니다. ★', 
+		detail4: '※​ 호텔 싱글차지 1인1박당 19,000~21,500엔', 
+		detail5: '※​ 2인플레이 추가 금액 5000엔(18홀/1인), 3인 플레이 추가금액 1000엔(18홀/1인)' },
+	{ url: subImg2.src, url2: Img4.src, alt: 'Image 4', 
+		title: '◆ 후쿠오카 센츄리 골프 ◆', 
+		description: '다양한 코스를 즐길 수 있는 일본 후쿠오카 센츄리골프 여행', 
+		detail1: '●후쿠오카 센츄리 골프 4일[센츄리 G.C 內 럭셔리 온천료칸 水雲亭 숙박] -(72H)', 
+		detail2: '・후쿠오카 명문 골프장 센츄리 G.C 경내에 위치한 럭셔리 온천료칸 Sui un tei(水雲亭) Open! \n　후쿠오카 센츄리 G.C 경내에 위치한 럭셔리 온천료칸 水雲亭 전 객실 천연 온천탕이 딸린 64㎡ 규모의 ​디럭스룸 숙박입니다.', 
+		detail3: '★ 상품가는 100엔=900원 기준으로 계산되었습니다. 급격한 환율변동시 상품가 조정됩니다. ★', 
+		detail4: '※​ 호텔 싱글차지 1인1박당 19,000~21,500엔', 
+		detail5: '※​ 2인플레이 추가 금액 5000엔(18홀/1인), 3인 플레이 추가금액 1000엔(18홀/1인)' },
+	{ url: subImg3.src, url2: Img5.src, alt: 'Image 5', 
+		title: '◆ 후쿠오카 VIP 명문 골프 ◆', 
+		description: '다양한 코스를 즐길 수 있는 일본 쿠오카 VIP 명문 골프 여행', 
+		detail1: '●후쿠오카 VIP 명문 골프 4일(72H)', 
+		detail2: '・특급호텔, 명문 골프코스, 전일정 전용차량 및 한국인 드라이빙 가이드 안내. \n　3박 4회 골프 라운드 요금으로 항공 일정 상 골프 3회 시 요금의 하향 변동이 있습니다. 문의 바랍니다.', 
+		detail3: '★ 상품가는 100엔=900원 기준으로 계산되었습니다. 급격한 환율변동시 상품가 조정됩니다. ★', 
+		detail4: '※​ 호텔 싱글차지 1인1박당 19,000~21,500엔', 
+		detail5: '※​ 2인플레이 추가 금액 5000엔(18홀/1인), 3인 플레이 추가금액 1000엔(18홀/1인)' },
+	{ url: Img3.src, url2: Img6.src, alt: 'Image 6', 
+		title: '◆ 아소(阿蘇)그랑비리오 골프 ◆', 
+		description: '다양한 코스를 즐길 수 있는 아소(阿蘇)그랑비리오 골프 여행', 
+		detail1: '●[ ★구마모토직항 ★] 아소(阿蘇)그랑비리오 골프 4일(54H)-토 출발', 
+		detail2: '・아소 활화산 초입에 자리잡은 골프 리조트로 아놀드 파머가 설계한 36홀의 코스를 가지고 있습니다. \n　호텔, 골프, 온천 모두 만족하실 수 있는 좋은 상품입니다. 특히 온천은 활화산의 영향을 받아 수질이 좋고인기가 높습니다.	', 
+		detail3: '★ 상품가는 100엔=900원 기준으로 계산되었습니다. 급격한 환율변동시 상품가 조정됩니다. ★', 
+		detail4: '※​ 호텔 싱글차지 1인1박당 19,000~21,500엔', 
+		detail5: '※​ 2인플레이 추가 금액 5000엔(18홀/1인), 3인 플레이 추가금액 1000엔(18홀/1인)' },
+];
+
+const PromotionDetail: React.FC = () => {
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const [selectedImage, setSelectedImage] = useState<ImageInfo | null>(null);
+	const sliderRef = useRef<Slider | null>(null);
+
+	const settings = {
+		dots: true,
+		infinite: true,
+		speed: 2000,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		afterChange: (current: number) => setCurrentIndex(current),
+		autoplay: true,
+		autoplaySpeed: 5000, // 5초마다 슬라이드
+		responsive: [
+			{
+				breakpoint: 768, // 768px 이하에서
+				settings: {
+					slidesToShow: 1, // 슬라이드 1개 표시
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 1024, // 1024px 이하에서
+				settings: {
+					slidesToShow: 1, // 슬라이드 1개 표시
+					slidesToScroll: 1,
+				},
+			},
+			// 추가적인 브레이크포인트 설정 가능
+		],
+	};
+
+	const handleNext = () => {
+		setCurrentIndex((prevIndex) =>
+			prevIndex === images.length - 1 ? 0 : prevIndex + 1
+		);
+	};
+	
+	const handlePrev = () => {
+		setCurrentIndex((prevIndex) =>
+			prevIndex === 0 ? images.length - 1 : prevIndex - 1
+		);
+	};
+		
+	useEffect(() => {
+		const interval = setInterval(() => {
+			if (sliderRef.current) {
+				sliderRef.current.slickNext();
+			}
+		}, 5000); // 5초 간격
+		return () => clearInterval(interval);
+	}, []);
+
+	const handleImageClick = (image: ImageInfo) => {
+		setSelectedImage(image);
+	};
+	
+	return (
+		<div id="home">			
+			<div className="slider">
+				<Slider ref={sliderRef} {...settings}>
+					{images.map((image, index) => (
+						<div
+							key={index}
+							style={{ position: "relative", height: "auto", display: 'flex', justifyContent: 'center', alignItems: 'center' }} // 슬라이드 중앙 정렬
+							onClick={() => handleImageClick(image)}
+						>
+							{/* ◀ 이전 버튼 */}
+							<button className="prev-button" onClick={() => sliderRef.current?.slickPrev()}>◀</button>
+							<Image
+								src={image.url}
+								alt={image.title}
+								layout="intrinsic"
+								width={1280}
+								height={450}
+								objectFit="contain"
+								style={{ maxWidth: '100%', height: 'auto' }} // 반응형으로 설정
+							/>
+							{/* ▶ 다음 버튼 */}
+							<button className="next-button" onClick={() => sliderRef.current?.slickNext()}>▶</button>
+						</div>
+					))}
+				</Slider>
+				<div className="info">
+                    <h2>{images[0].detail1}</h2>
+                    <p style={{ whiteSpace: 'pre-wrap' }}>{images[0].detail2}</p>
+                    <p>{images[0].detail3}</p>
+                    <p>{images[0].detail4}</p>
+                    <p>{images[0].detail5}</p>
+                </div>		
+			</div>
+		</div>
+	);
+};
+
+export default PromotionDetail;

@@ -20,13 +20,6 @@ import Img4 from "@_images/main/1932778_2.jpg";
 import Img5 from "@_images/main/1953128_2.jpg";
 import Img6 from "@_images/main/1969201_2.jpg";
 
-import subImg1 from "@_images/sub/golfclub01.jpg";
-import subImg2 from "@_images/sub/golfclub02.jpg";
-import subImg3 from "@_images/sub/golfclub03.jpg";
-import subImg4 from "@_images/sub/golfclub04.jpg";
-import subImg5 from "@_images/sub/golfclub05.jpg";
-
-
 interface ImageInfo {
 	url: string;
 	url2: string;
@@ -91,7 +84,7 @@ const images: ImageInfo[] = [
 		detail5: '※​ 2인플레이 추가 금액 5000엔(18홀/1인), 3인 플레이 추가금액 1000엔(18홀/1인)' },
 ];
 
-const InitialPage: React.FC = () => {
+const Main: React.FC = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [selectedImage, setSelectedImage] = useState<ImageInfo | null>(null);
 	const sliderRef = useRef<Slider | null>(null);
@@ -150,7 +143,7 @@ const InitialPage: React.FC = () => {
 	};
 	
 	return (
-		<div>			
+		<div id="home">			
 			<div className="slider">
 				<Slider ref={sliderRef} {...settings}>
 					{images.map((image, index) => (
@@ -201,64 +194,8 @@ const InitialPage: React.FC = () => {
 					</div>
 				)}				
 			</div>
-			<div className="info">
-				<div className="header_01">
-					<h1>베리굿 프로모션</h1>
-					<p>이벤트와 할인이 가득!</p>
-				</div>
-				<div className="image-gallery">
-					{/* <div className="image-container">
-						<Image src={subImg1} alt="샘플 이미지 1"/>
-						<div className="image-text">후쿠오카 시내 골프</div>
-					</div> */}
-					<div className="image-container">
-						<Image src={subImg2} alt="샘플 이미지 2"/>
-						<div className="image-text">카고시마 케도인 온천골프</div>
-					</div>
-					<div className="image-container">
-						<Image src={subImg3} alt="샘플 이미지 3"/>
-						<div className="image-text">카고시마 그린힐 온천골프</div>
-					</div>
-					<div className="image-container">
-						<Image src={subImg4} alt="샘플 이미지 4"/>
-						<div className="image-text">후쿠오카 센츄리 골프</div>
-					</div>
-					<div className="image-container">
-						<Image src={subImg5} alt="샘플 이미지 5"/>
-						<div className="image-text">후쿠오카 VIP 명문 골프</div>
-					</div>
-				</div>
-			</div><div className="info">
-				<div className="header_01">
-					<h1>추천 골프여행</h1>
-					<p>다양한 코스를 즐길 수 있는 일본 골프여행</p>
-				</div>
-				<div className="image-gallery">
-					<div className="image-container">
-						<Image src={subImg3} alt="샘플 이미지 1"/>
-						<div className="image-text">아소(阿蘇)그랑비리오 골프</div>
-					</div>
-					<div className="image-container">
-						<Image src={subImg4} alt="샘플 이미지 2"/>
-						<div className="image-text">후쿠오카 센츄리 골프</div>
-					</div>
-					<div className="image-container">
-						<Image src={subImg5} alt="샘플 이미지 3"/>
-						<div className="image-text">카고시마 케도인 온천골프</div>
-					</div>
-					{/* <div className="image-container">
-						<Image src={subImg1} alt="샘플 이미지 4"/>
-						<div className="image-text">후쿠오카 시내 골프</div>
-					</div> */}
-					<div className="image-container">
-						<Image src={subImg2} alt="샘플 이미지 5"/>
-						<div className="image-text">카고시마 그린힐 온천골프</div>
-					</div>
-				</div>
-			</div>
 		</div>
-		
 	);
 };
 
-export default InitialPage;
+export default Main;

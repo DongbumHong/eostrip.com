@@ -3,7 +3,12 @@
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from 'react';
 // utils 
-import INITIAL from "@_containers/top/initial";
+import MAIN from "@_containers/main";
+import PROMOTION from "@_containers/promotion";
+import PREMIUM from "@_containers/premium";
+import GOLFTOUR from "@_containers/golf-tour";
+import KYSHUTOUR from "@_containers/kyushu-tour";
+import CONTACT from "@_containers/contact";
 import '@_styles//globals.css'
 
 const Main = () => {
@@ -35,9 +40,14 @@ const Main = () => {
 	return (
 		<div>
 			<main className="main">
-				<div><INITIAL></INITIAL></div>
+				<div><MAIN></MAIN></div>
+				<div><PROMOTION></PROMOTION></div>
+				<div><PREMIUM></PREMIUM></div>
+				<div><GOLFTOUR></GOLFTOUR></div>
+				<div><KYSHUTOUR></KYSHUTOUR></div>
+				<div><CONTACT></CONTACT></div>
 			</main>
-			<button className="floating-button" >문의하기</button>
+			<button className="floating-button" onClick={() => window.location.href = '#contact'}>여행문의</button>
 			<button className="scrollToTop" onClick={scrollToTop}>↑</button>
 		</div>
 	);
