@@ -422,18 +422,6 @@ footer {
     }
 }
 
-.contact-container {
-    padding: 10px; /* 내부 패딩 */
-    flex: 1 1 calc(50% - 20px); /* 기본 5개 이미지 표시 (여백 고려) */
-    margin: 10px; /* 이미지 간격 */
-}
-
-@media (max-width: 780px) {
-    .contact-container {
-        flex: 1 1 calc(50% - 20px); /* 2개 이미지 표시 */
-    }
-}
-
 .image-text {
 	margin-top: 10px; /* 이미지와 텍스트 사이의 간격 */
 	text-align: center; /* 텍스트 중앙 정렬 */
@@ -489,12 +477,13 @@ margin: 20px 0; /* 상하 여백 */
 .ftr_social {
 	list-style: none; /* 기본 리스트 스타일 제거 */
 	padding: 0; /* 패딩 제거 */
-	display: flex; /* 플렉스 박스 사용 */
+	display: inline-block; /* 플렉스 박스 사용 */
 	gap: 20px; /* 아이콘 간격 */
 }
 
 .ftr_social li {
 	display: inline; /* 인라인으로 표시 */
+	margin: 0 3px; /* 아이템 간 간격 */
 }
 
 .ftr_social a {
@@ -537,13 +526,54 @@ margin: 20px 0; /* 상하 여백 */
     height: 40px;
 }
 
+.contact-container {
+    padding: 10px;
+    margin: 10px;
+    flex: 1;
+}
+
+@media (max-width: 780px) {
+    .contact-container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .left-align {
+        flex: 1; /* 비율 1 */
+    }
+
+    .center-align {
+        flex: 1; /* 비율 1 */
+    }
+
+    .contact-form {
+        flex: 4; /* 비율 4 */
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name-fields {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .half-width {
+        flex: 1 1 50%;
+        padding-right: 10px;
+    }
+}
+
 .columns {
     display: flex;
     gap: 20px;
 }
 
 .column {
-    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* 이름 입력 필드 가로 배치 */
@@ -583,4 +613,7 @@ margin: 20px 0; /* 상하 여백 */
 
 .left-align {
     text-align: left; /* 텍스트를 왼쪽으로 정렬 */
+}
+.center-align {
+    text-align: center; /* 텍스트를 중앙 정렬 */
 }
