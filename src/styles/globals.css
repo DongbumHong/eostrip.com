@@ -564,6 +564,7 @@ margin: 20px 0; /* 상하 여백 */
     .contact-container {
         padding: 10px;
         margin: 10px;
+		font-size: 12px;
     }
 
     .left-align {
