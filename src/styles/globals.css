@@ -642,6 +642,7 @@ margin: 20px 0; /* 상하 여백 */
 
 .left-align {
     text-align: left; /* 텍스트를 왼쪽으로 정렬 */
+    padding: 0 20px;
 }
 .center-align {
     text-align: center; /* 텍스트를 중앙 정렬 */

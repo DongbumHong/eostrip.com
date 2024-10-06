@@ -30,15 +30,6 @@ const CONTACT: React.FC = () => {
 									・대표전화<br />　+81-92-285-2430<br /><br />
 									・Mobile<br />　+81-90-3327-9397<br />
 								</p>
-							</div><br /><br />
-							<div className="center-align">
-								<ul className="ftr_social">
-									<li><a href="https://story.kakao.com/ch/verygoodtour" target="_blank" className="f_kakao"><Image src={kakao} alt="kakao"/></a></li>
-									<li><a href="https://blog.naver.com/vgt0901" target="_blank" className="f_pinter"><Image src={line} alt="line"/></a></li>
-									<li><a href="https://www.instagram.com/verygoodtour_official" target="_blank" className="f_facebook"><Image src={instar} alt="instar"/></a></li>
-									<li><a href="https://www.facebook.com/verygoodtour" target="_blank" className="f_insta"><Image src={facebook} alt="facebook"/></a></li>
-									<li><a href="https://www.youtube.com/user/verygoodtourofficial" target="_blank" className="f_blog"><Image src={youtube} alt="youtube"/></a></li>
-								</ul>
 							</div>
 						</div>
 						<div className="column contact-form contact-container">
@@ -67,6 +58,15 @@ const CONTACT: React.FC = () => {
 							</div>
 						</div>
 					</div>
+				</div><br /><br />
+				<div className="left-align">
+					<ul className="ftr_social">
+						<li><a href="https://story.kakao.com/ch/verygoodtour" target="_blank" className="f_kakao"><Image src={kakao} alt="kakao"/></a></li>
+						<li><a href="https://blog.naver.com/vgt0901" target="_blank" className="f_pinter"><Image src={line} alt="line"/></a></li>
+						<li><a href="https://www.instagram.com/verygoodtour_official" target="_blank" className="f_facebook"><Image src={instar} alt="instar"/></a></li>
+						<li><a href="https://www.facebook.com/verygoodtour" target="_blank" className="f_insta"><Image src={facebook} alt="facebook"/></a></li>
+						<li><a href="https://www.youtube.com/user/verygoodtourofficial" target="_blank" className="f_blog"><Image src={youtube} alt="youtube"/></a></li>
+					</ul>
 				</div>
 
 				<div className="spacer-large" ></div>
