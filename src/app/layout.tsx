@@ -1,100 +1,34 @@
-"use client";	// Client Component로 설정
-
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import '@_styles//globals.css'
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+// setting font-awesome icon size: autoAddCss-> false
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
-import Image from 'next/image';
-import logo from "@_images/sub/logo.png";
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+	description: "Welcome To YG-Mart",
+	icons: {
+		icon: "/favicon.ico",
+	},
+};
 
 export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-
-	const [isMenuVisible, setMenuVisible] = useState(false);
-	const [isMobile, setIsMobile] = useState(false);
-
-	useEffect(() => {
-		const handleResize = () => {
-			setIsMobile(window.innerWidth <= 768); // 모바일 크기 감지
-		};
-
-		// 초기 렌더링 시에도 크기 체크
-		handleResize();
-
-		window.addEventListener("resize", handleResize);
-		return () => window.removeEventListener("resize", handleResize);
-	}, []);
-
-	const handleToggleMenu = () => {
-		setMenuVisible((prev) => !prev);
-	};
-
-	const handleCloseMenu = () => {
-		setMenuVisible(false); // 메뉴를 닫음
-	};
-	
 	return (
 		<html lang="en">
-			<body id="home">
-				<div className="container">
-					{/* <header className="header"> */}
-					<div className="navbar">
-						<Link href="/#home"><Image src={logo} alt="로고" width={40} height={40} /></Link>
-						<h3>에오스 골프투어</h3>
-						{!isMobile && ( // 모바일이 아닐 때만 기본 메뉴 표시
-							<>
-								<Link href="/#premium">프리미엄 상품</Link>
-								<Link href="/#golf-tour">골프투어</Link>
-								<Link href="/#kyushu-tour">큐슈관광</Link>
-								<Link href="/#contact">여행문의</Link>
-							</>
-						)}
-
-						{isMobile && ( // 모바일일 때만 메뉴 토글 버튼 표시
-							<a href="#full" id="menu-toggle" className="active menu-toggle" onClick={handleToggleMenu}>
-								{isMenuVisible ? '≣' : '≣'}
-							</a>
-						)}
-					</div>
-					{/* </header> */}
-
-					{/* 모바일 환경에서만 메뉴를 보여줍니다 */}
-					{isMobile && isMenuVisible && (
-						<div className="full-menu" id="full-menu">
-							<ul>
-								<Link href="/#premium" onClick={handleCloseMenu}><li>프리미엄 상품</li></Link>
-								<Link href="/#golf-tour" onClick={handleCloseMenu}><li>골프투어</li></Link>
-								<Link href="/#kyushu-tour" onClick={handleCloseMenu}><li>큐슈관광</li></Link>
-								<Link href="/#contact" onClick={handleCloseMenu}><li>문의하기</li></Link>
-							</ul>
-						</div>
-					)}
-
-					{/* page.tsx */}
-					<div>{children}</div>
-
-					<footer>
-						<div>
-							<div className="footer_head">
-								<h2>에오스 골프투어</h2>
-							</div>
-						</div>
-						<span className="footer_info">
-							대표이사 : 지정훈 <br />
-							〒812-0013 福岡市博多区博多駅東3－9－7－503号 <br />
-							대표전화 + 81-92-285-2430 <br />
-							Mobile : + 81-90-3327-9397 <br /><br />
-							※ 에오스골프투어는 여행상품 판매에 대하여 현지대응자로서 통신판매의 당사자가 아니며 해당 상품의 거래 정보 및 거래 등에 대해 책임을 지지 않습니다. <br /><br />
-							Copyright © eosgolftour.com All rights reserved.
-						</span>
-						<br></br>
-					</footer>
-				</div>
+			<head>
+				<title>Dopetrope by HTML5 UP</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+			</head>
+			<body className={inter.className}>
+				{/* <div><HEADER/></div> */}
+				<div>{children}</div>
+				{/* <div><FOOTER/></div> */}
 			</body>
 		</html>
 	);
