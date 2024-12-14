@@ -1,7 +1,0 @@
-﻿@font-face {
-  font-family: 'Blinker';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(s/blinker/v13/cIf9MaFatEE-VTaP9C6hZA.ttf) format('truetype');
-}
