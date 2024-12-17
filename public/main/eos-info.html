@@ -11,28 +11,37 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+			// 공통 HTML 로드 함수
+			function loadHTML(file, elementId) {
+				fetch(file)
+					.then(response => response.text())
+					.then(data => {
+						document.getElementById(elementId).innerHTML = data;
+					})
+					.catch(error => console.error('Error loading HTML:', error));
+			}
+		</script>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 		<div id="wrapper">
 
-			<!-- Header -->
-			<header id="header" class="alt">
-				<a href="index.html" class="logo"><strong>EOS TRIP</strong> <span></span></a>
-				<nav>
-					<a href="#menu">메뉴</a>
-				</nav>
-			</header>
-
+			<!-- header -->
+			<div id="header"></div>
+			<script>loadHTML('header.html', 'header');</script>
+			
 			<!-- Menu -->
+			<!-- <div id="menu"></div>
+			<script>loadHTML('menu.html', 'menu');</script> -->
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="index.html">HOME</a></li>
 					<li><a href="private-tour.html">프라이빗 투어</a></li>
 					<li><a href="golf-tour.html">골프 투어</a></li>
-					<li><a href="eos-info.html#Info">에오스 트립</a></li>
-					<li><a href="eos-info.html#Contact">여행 문의</a></li>
+					<li><a href="eos-info.html#info">에오스 트립</a></li>
+					<li><a href="eos-info.html#contact">여행 문의</a></li>
 				</ul>
 			</nav>
 
@@ -40,7 +49,7 @@
 			<div id="main" class="alt">
 
 				<!-- One -->
-				<section id="Info">
+				<section id="info">
 					<div class="inner">
 						<header class="major">
 							<h1>EOS TRIP</h1>
@@ -51,84 +60,35 @@
 						<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
 					</div>
 				</section>
-
+				
 			</div>
 
-			<!-- Contact -->
-			<section id="Contact">
-				<div class="inner">
-					<section>
-						<form method="post" action="#">
-							<header class="major">
-								<h3>여행 문의</h3>
-							</header>
-							<div class="fields">
-								<div class="field half">
-									<label for="name">이름</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field half">
-									<label for="email">이메일</label>
-									<input type="text" name="email" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">내용</label>
-									<textarea name="message" id="message" rows="6"></textarea>
-								</div>
-							</div>
-							<ul class="actions">
-								<li><input type="submit" value="보내기" class="primary" /></li>
-								<li><input type="reset" value="처음부터" /></li>
-							</ul>
-						</form>
-					</section>
-					<section class="split">
-						<section>
-							<div class="contact-method">
-								<span class="icon solid alt fa-envelope"></span>
-								<h3>Email</h3>
-								<a href="#">fukuoka@eostrip.com</a>
-							</div>
-						</section>
-						<section>
-							<div class="contact-method">
-								<span class="icon solid alt fa-phone"></span>
-								<h3>TEL</h3>
-								<span>+81-92-285-2430</span>
-								<h3>MOBILE</h3>
-								<span>+81-90-3327-9397</span>
-							</div>
-						</section>
-						<section>
-							<div class="contact-method">
-								<span class="icon solid alt fa-home"></span>
-								<h3>주소</h3>
-								<span>〒812-0013<br />
-									福岡市博多区博多駅東<br />
-									3－9－7－503号</span>
-							</div>
-						</section>
-					</section>
-				</div>
-			</section>
+			<!-- contact -->
+			<div id="contact"></div>
+			<script>loadHTML('contact.html', 'contact');</script>
+
+			<!-- Map -->
+			<div id="main">
+				<section id="Map">
+					<div class="inner">
+						<iframe
+							title="Fukuoka, Hakata"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.0123453452315!2d130.4218392!3d33.5903549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541f1a3f738ff79%3A0x79f80d9c0a3ae520!2z44CSODEwLTAwMjQg5p2x5Lqs6YO95ZOB5bed5bSO5biC6I2J5Yy65pel5aSn77yT5LiB55uu77yZ4oiS77yW!5e0!3m2!1sko!2sjp!4v1635640027743!5m2!1sko!2sjp&z=17&markers=33.5903549,130.4218392"
+							width="100%"
+							height="600"
+							allowFullScreen={true}
+							loading="lazy">
+						</iframe>
+					</div>
+				</section>
+			</div>
 
 			<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<!-- <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li> -->
-						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<!-- <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li> -->
-						<!-- <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li> -->
-					</ul>
-					<ul class="copyright">
-						<li>Copyright &copy; eostrip.com All rights reserved.</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+			<div id="footer"></div>
+			<script>loadHTML('footer.html', 'footer');</script>
 
 		</div>
+		<button id="scrollTopBtn">Top</button>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
@@ -138,6 +98,7 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/script.js"></script>
 
 	</body>
 </html>

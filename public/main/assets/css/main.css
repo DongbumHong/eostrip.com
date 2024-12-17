@@ -3950,3 +3950,30 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+
+/* Top 버튼 스타일 */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* 초기에는 숨김 */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+/* Hover 스타일 */
+#scrollTopBtn:hover {
+    background-color: #0056b3;
+}
+
+/* 버튼이 나타날 때 효과 */
+#scrollTopBtn.show {
+    display: block;
+}

@@ -11,28 +11,37 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+			// 공통 HTML 로드 함수
+			function loadHTML(file, elementId) {
+				fetch(file)
+					.then(response => response.text())
+					.then(data => {
+						document.getElementById(elementId).innerHTML = data;
+					})
+					.catch(error => console.error('Error loading HTML:', error));
+			}
+		</script>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 		<div id="wrapper">
 
-			<!-- Header -->
-			<header id="header" class="alt">
-				<a href="index.html" class="logo"><strong>EOS TRIP</strong> <span></span></a>
-				<nav>
-					<a href="#menu">메뉴</a>
-				</nav>
-			</header>
+			<!-- header -->
+			<div id="header"></div>
+			<script>loadHTML('header.html', 'header');</script>
 
 			<!-- Menu -->
+			<!-- <div id="menu"></div>
+			<script>loadHTML('menu.html', 'menu');</script> -->
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="index.html">HOME</a></li>
 					<li><a href="private-tour.html">프라이빗 투어</a></li>
 					<li><a href="golf-tour.html">골프 투어</a></li>
-					<li><a href="eos-info.html#Info">에오스 트립</a></li>
-					<li><a href="eos-info.html#Contact">여행 문의</a></li>
+					<li><a href="eos-info.html#info">에오스 트립</a></li>
+					<li><a href="eos-info.html#contact">여행 문의</a></li>
 				</ul>
 			</nav>
 
@@ -56,184 +65,120 @@
 			</section>
 
 			<!-- Main -->
-				<div id="main">
+			<div id="main">
 
-					<!-- One -->
-					<section id="one">
-						<div class="inner">
-							<header class="major">
-								<h2>큐슈 골프여행</h2>
-							</header>
-							<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.</p>
+				<!-- One -->
+				<section id="one">
+					<div class="inner">
+						<header class="major">
+							<h2>큐슈 골프여행</h2>
+						</header>
+						<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.</p>
+					</div>
+				</section>
+
+				<!-- Two -->
+				<section id="two" class="spotlights">
+					
+					<section>
+						<a href="golf-fukuoka.html" class="image">
+							<img src="images/pic09.jpg" alt="" data-position="top center" />
+						</a>
+						<div class="content">
+							<div class="inner">
+								<header class="major">
+									<h3>후쿠오카시내 골프백 투어</h3>
+								</header>
+								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+								<ul class="actions">
+									<li><a href="golf-fukuoka.html" class="button">상세정보</a></li>
+								</ul>
+							</div>
 						</div>
 					</section>
 
-					<!-- Two -->
-					<section id="two" class="spotlights">
-						
-						<section>
-							<a href="golf-fukuoka.html" class="image">
-								<img src="images/pic09.jpg" alt="" data-position="top center" />
-							</a>
-							<div class="content">
-								<div class="inner">
-									<header class="major">
-										<h3>후쿠오카시내 골프백 투어</h3>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-									<ul class="actions">
-										<li><a href="golf-fukuoka.html" class="button">상세정보</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section>
-							<a href="golf-kominka.html" class="image">
-								<img src="images/pic08.jpg" alt="" data-position="center center" />
-							</a>
-							<div class="content">
-								<div class="inner">
-									<header class="major">
-										<h3>고민카 네리 골프백 투어</h3>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-									<ul class="actions">
-										<li><a href="golf-kominka.html" class="button">상세정보</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section>
-							<a href="golf-ukiha.html" class="image">
-								<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
-							</a>
-							<div class="content">
-								<div class="inner">
-									<header class="major">
-										<h3>우키하 하나케시키 골프백 투어</h3>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-									<ul class="actions">
-										<li><a href="golf-ukiha.html" class="button">상세정보</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section>
-							<a href="golf-saga.html" class="image">
-								<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
-							</a>
-							<div class="content">
-								<div class="inner">
-									<header class="major">
-										<h3>사가 골프백 투어</h3>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-									<ul class="actions">
-										<li><a href="golf-saga.html" class="button">상세정보</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section>
-							<a href="golf-nagasaki.html" class="image">
-								<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
-							</a>
-							<div class="content">
-								<div class="inner">
-									<header class="major">
-										<h3>나가사키 유미하리노오카 골프백 투어</h3>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-									<ul class="actions">
-										<li><a href="golf-nagasaki.html" class="button">상세정보</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-					</section>
-				</div>
-
-			<!-- Contact -->
-			<section id="contact">
-				<div class="inner">
 					<section>
-						<form method="post" action="#">
-							<header class="major">
-								<h3>여행 문의</h3>
-							</header>
-							<div class="fields">
-								<div class="field half">
-									<label for="name">이름</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field half">
-									<label for="email">이메일</label>
-									<input type="text" name="email" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">내용</label>
-									<textarea name="message" id="message" rows="6"></textarea>
-								</div>
+						<a href="golf-kominka.html" class="image">
+							<img src="images/pic08.jpg" alt="" data-position="center center" />
+						</a>
+						<div class="content">
+							<div class="inner">
+								<header class="major">
+									<h3>고민카 네리 골프백 투어</h3>
+								</header>
+								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+								<ul class="actions">
+									<li><a href="golf-kominka.html" class="button">상세정보</a></li>
+								</ul>
 							</div>
-							<ul class="actions">
-								<li><input type="submit" value="보내기" class="primary" /></li>
-								<li><input type="reset" value="처음부터" /></li>
-							</ul>
-						</form>
+						</div>
 					</section>
-					<section class="split">
-						<section>
-							<div class="contact-method">
-								<span class="icon solid alt fa-envelope"></span>
-								<h3>Email</h3>
-								<a href="#">fukuoka@eostrip.com</a>
+
+					<section>
+						<a href="golf-ukiha.html" class="image">
+							<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
+						</a>
+						<div class="content">
+							<div class="inner">
+								<header class="major">
+									<h3>우키하 하나케시키 골프백 투어</h3>
+								</header>
+								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+								<ul class="actions">
+									<li><a href="golf-ukiha.html" class="button">상세정보</a></li>
+								</ul>
 							</div>
-						</section>
-						<section>
-							<div class="contact-method">
-								<span class="icon solid alt fa-phone"></span>
-								<h3>TEL</h3>
-								<span>+81-92-285-2430</span>
-								<h3>MOBILE</h3>
-								<span>+81-90-3327-9397</span>
-							</div>
-						</section>
-						<section>
-							<div class="contact-method">
-								<span class="icon solid alt fa-home"></span>
-								<h3>주소</h3>
-								<span>〒812-0013<br />
-									福岡市博多区博多駅東<br />
-									3－9－7－503号</span>
-							</div>
-						</section>
+						</div>
 					</section>
-				</div>
-			</section>
+
+					<section>
+						<a href="golf-saga.html" class="image">
+							<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
+						</a>
+						<div class="content">
+							<div class="inner">
+								<header class="major">
+									<h3>사가 골프백 투어</h3>
+								</header>
+								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+								<ul class="actions">
+									<li><a href="golf-saga.html" class="button">상세정보</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<a href="golf-nagasaki.html" class="image">
+							<img src="images/pic10.jpg" alt="" data-position="25% 25%" />
+						</a>
+						<div class="content">
+							<div class="inner">
+								<header class="major">
+									<h3>나가사키 유미하리노오카 골프백 투어</h3>
+								</header>
+								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+								<ul class="actions">
+									<li><a href="golf-nagasaki.html" class="button">상세정보</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+				</section>
+			</div>
+
+			<!-- contact -->
+			<div id="contact"></div>
+			<script>loadHTML('contact.html', 'contact');</script>
 
 			<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<!-- <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li> -->
-						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<!-- <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li> -->
-						<!-- <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li> -->
-					</ul>
-					<ul class="copyright">
-						<li>Copyright &copy; eostrip.com All rights reserved.</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+			<div id="footer"></div>
+			<script>loadHTML('footer.html', 'footer');</script>
 
 		</div>
+
+		<button id="scrollTopBtn">Top</button>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
@@ -243,6 +188,7 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/script.js"></script>
 
 	</body>
 </html>
