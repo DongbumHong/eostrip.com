@@ -1,9 +1,10 @@
 <!-- Contact -->
-<div id="wrapper">
+<!-- <form method="post" action="https://script.google.com/macros/s/AKfycbxNlXPFhHd-dIENBFccZDsINxAs0SLLievc3FNPaxy-ZXAR6NgNU7rjecDQuDgUbaeUww/exec"> -->
+<!-- <div id="wrapper">
 	<section id="contact">
 		<div class="inner">
 			<section>
-				<form method="post" action="#">
+				<form method="post" action="https://script.google.com/macros/s/AKfycbxNlXPFhHd-dIENBFccZDsINxAs0SLLievc3FNPaxy-ZXAR6NgNU7rjecDQuDgUbaeUww/exec">
 					<header class="major">
 						<h3>여행 문의</h3>
 					</header>
@@ -33,7 +34,7 @@
 					<div class="contact-method">
 						<span class="icon solid alt fa-envelope"></span>
 						<h3>Email</h3>
-						<a href="#">fukuoka@eostrip.com</a>
+						<p>fukuoka@eostrip.com</p>
 					</div>
 				</section>
 
@@ -75,4 +76,146 @@
 			</section>
 		</div>
 	</section>
-</div>
+</div> -->
+
+<!-- Contact -->
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<section id="contact">
+				<div class="inner">
+					<section>
+						<form id="contactForm">
+							<header class="major"></header>
+								<h3>여행 문의</h3>
+							</header>
+							<div class="fields">
+								<div class="field half">
+									<label for="name">이름:</label>
+									<input type="text" id="name" name="name" required /><br />
+								</div>
+
+								<div class="field half">
+									<label for="email">이메일:</label>
+									<input type="email" id="email" name="email" required/><br />
+								</div>
+
+								<div class="field half">
+									<label for="message">메시지:</label>
+									<textarea id="message" name="message" required></textarea><br />
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="보내기" class="primary" /></li>
+								<li><input type="reset" value="처음부터" /></li>
+							</ul>
+						</form>
+						<!-- <form method="post" action="https://script.google.com/macros/s/AKfycbxNlXPFhHd-dIENBFccZDsINxAs0SLLievc3FNPaxy-ZXAR6NgNU7rjecDQuDgUbaeUww/exec">
+							<header class="major">
+								<h3>여행 문의</h3>
+							</header>
+							<div class="fields">
+								<div class="field half">
+									<label for="name">이름</label>
+									<input type="text" name="name" id="name"  required/>
+								</div>
+								<div class="field half">
+									<label for="email">이메일</label>
+									<input type="text" name="email" id="email"  required/>
+								</div>
+								<div class="field">
+									<label for="message">내용</label>
+									<textarea name="message" id="message" rows="15"  required></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="보내기" class="primary" /></li>
+								<li><input type="reset" value="처음부터" /></li>
+							</ul>
+						</form> -->
+					</section>
+
+					<section class="split">
+						<section>
+							<div class="contact-method">
+								<span class="icon solid alt fa-envelope"></span>
+								<h3>Email</h3>
+								<p>fukuoka@eostrip.com</p>
+							</div>
+						</section>
+
+						<section>
+							<div class="contact-method">
+								<span class="icon solid alt fa-phone"></span>
+								<h3>TEL</h3>
+								<span>+81-92-285-2430</span>
+								<h3>MOBILE</h3>
+								<span>+81-90-3327-9397</span>
+							</div>
+						</section>
+
+						<section>
+							<div class="contact-method">
+								<span class="icon solid alt fa-solid fa-comment"></span>
+								<h3>SNS</h3>
+							</div>
+							<div class="inner">
+								<ul class="icons">
+									　　　
+									<li><a href="https://www.instagram.com/eos_trip/" target="_blank" class="icon brands alt"><img src="images/sns/instar.png" alt="instagram"/></a></li>
+									<li><a href="https://www.youtube.com/@에오스트립" target="_blank" class="icon brands alt"><img src="images/sns/youtube.png" alt="youtube"/></a></li>
+									<li><a href="https://pf.kakao.com/_rHxfxln/" target="_blank" class="icon brands alt"><img src="images/sns/kakao.png" alt="kakao"/></a></li>
+								</ul>
+							</div>
+						</section>
+						
+						<section>
+							<div class="contact-method">
+								<span class="icon solid alt fa-home"></span>
+								<h3>주소</h3>
+								<span>〒812-0013<br />
+									福岡市博多区博多駅東<br />
+									3－9－7－503号</span>
+							</div>
+						</section>
+						
+					</section>
+
+				</section>
+			</div>
+		</div>
+
+		<div id="result"></div>
+
+		<script>
+			$(document).ready(function () {
+				$("#contactForm").on("submit", function (event) {
+					event.preventDefault(); // 기본 제출 방지
+
+					const formData = $(this).serialize(); // 폼 데이터 직렬화
+					$.ajax({
+						url: "https://script.google.com/macros/s/AKfycbxNlXPFhHd-dIENBFccZDsINxAs0SLLievc3FNPaxy-ZXAR6NgNU7rjecDQuDgUbaeUww/exec", // 실제 Google Script URL로 변경
+						type: "POST",
+						data: formData,
+						success: function (response) {
+							const result = JSON.parse(response);
+							if (result.success) {
+								$("#result").html("<p>메일 전송 성공!</p>");
+							} else {
+								$("#result").html("<p>오류: " + result.message + "</p>");
+							}
+						},
+						error: function () {
+							$("#result").html("<p>서버 오류 발생!</p>");
+						},
+					});
+				});
+			});
+		</script>
+		<script data-cfasync="false" type="text/javascript" src="assets/js/mailform.js"></script>
+	</body>
+</html>
