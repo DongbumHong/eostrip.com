@@ -2814,7 +2814,7 @@ input, select, textarea {
 				opacity: 0;
 			}
 
-			.tiles article:nth-child(4n - 1):before, .tiles article:nth-child(4n - 2):before {
+			/* .tiles article:nth-child(4n - 1):before, .tiles article:nth-child(4n - 2):before {
 				-moz-transition: opacity 0.5s ease;
 				-webkit-transition: opacity 0.5s ease;
 				-ms-transition: opacity 0.5s ease;
@@ -2844,7 +2844,7 @@ input, select, textarea {
 
 			.tiles article:nth-child(4n - 1):hover:before, .tiles article:nth-child(4n - 2):hover:before {
 				opacity: 0.5;
-			}
+			} */
 
 			.tiles article.is-transitioning {
 				-moz-transform: scale(0.95);
