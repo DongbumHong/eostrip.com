@@ -2792,7 +2792,7 @@ input, select, textarea {
 				display: block;
 				height: 100%;
 				left: 0;
-				opacity: 0.25;
+				opacity: 0.65;
 				position: absolute;
 				width: 100%;
 				z-index: 2;
@@ -3307,11 +3307,19 @@ input, select, textarea {
 			}
 
 			#header.alt.style5 .logo strong {
-				color: #8ea9e8;
+				color: #a7b7dd;
 			}
 
 			#header.alt.style6 .logo strong {
 				color: #87c5a4;
+			}
+
+			#header.alt.style7 .logo strong {
+				background-color: #0d2868;
+			}
+	
+			#header.alt.style8 .logo strong {
+				background-color: #0b512c;
 			}
 
 		body.is-preload #header.alt {
@@ -3447,7 +3455,7 @@ input, select, textarea {
 			display: block;
 			height: 100%;
 			left: 0;
-			opacity: 0.85;
+			opacity: 0.5;
 			position: absolute;
 			top: 0;
 			width: 100%;
@@ -3544,6 +3552,14 @@ input, select, textarea {
 
 		#banner.style6:after {
 			background-color: #87c5a4;
+		}
+
+		#banner.style7:after {
+			background-color: #a7c7f9;
+		}
+
+		#banner.style8:after {
+			background-color: #9cf2c0;
 		}
 
 		body.is-preload #banner:after {
