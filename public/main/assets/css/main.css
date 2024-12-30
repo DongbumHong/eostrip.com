@@ -2685,7 +2685,7 @@ input, select, textarea {
 			button.primary:active,
 			.button.primary:hover,
 			.button.primary:active {
-				background-color: #9bf1ff;
+				background-color: #9b9eff;
 				color: #242943 !important;
 			}
 
@@ -4023,6 +4023,30 @@ input, select, textarea {
 
 /* 버튼이 나타날 때 효과 */
 #scrollTopBtn.show {
+    display: block;
+}
+
+
+/* Top 버튼 스타일 */
+#basicBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); */
+    transition: opacity 0.3s ease;
+}
+
+/* Hover 스타일 */
+#basicBtn:hover {
+    background-color: #0056b3;
+}
+
+/* 버튼이 나타날 때 효과 */
+#basicBtn.show {
     display: block;
 }
 
