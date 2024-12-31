@@ -4119,7 +4119,7 @@ ul.dates {
 /* 모바일 환경 (최대 너비 768px) */
 @media (max-width: 768px) {
 .text-style1 {
-	font-size: 1rem; /* medium 크기 (16px) */
+	font-size: 0.95rem; /* medium 크기 (16px) */
 	}
 }
 
