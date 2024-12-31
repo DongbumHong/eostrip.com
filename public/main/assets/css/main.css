@@ -4111,3 +4111,21 @@ ul.dates {
 		ul.dates li:first-child .date {
 			top: 0;
 		}
+
+#text-style1 {
+	font-size: 16px; /* 기본 폰트 크기 */
+}
+
+/* 모바일 환경 (최대 너비 768px) */
+@media (max-width: 768px) {
+#text-style1 {
+	font-size: 1rem; /* medium 크기 (16px) */
+	}
+}
+
+/* PC 환경 (최소 너비 769px) */
+@media (min-width: 769px) {
+#text-style1 {
+	font-size: 1.25rem; /* large 크기 (20px) */
+	}
+}
