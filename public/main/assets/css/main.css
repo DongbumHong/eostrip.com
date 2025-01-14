@@ -1861,6 +1861,100 @@ input, select, textarea {
 
 	}
 
+
+	header.major3 {
+		width: -moz-max-content;
+		width: -webkit-max-content;
+		width: -ms-max-content;
+		width: max-content;
+		margin-bottom: 2em;
+	}
+
+		header.major3 > :first-child {
+			margin-bottom: 0;
+			width: calc(100% + 0.5em);
+		}
+
+			header.major3 > :first-child:after {
+				content: '';
+				background-color: #c9f1dc;
+				display: block;
+				height: 2px;
+				margin: 0.325em 0 0.5em 0;
+				width: 100%;
+			}
+
+		header.major3 > h1 {
+			/* font-size: 0.7em;
+			font-weight: 600;
+			letter-spacing: 0.25em;
+			margin-bottom: 0;
+			text-transform: uppercase; */
+			color: #c9f1dc;
+		}
+
+		body.is-ie header.major3 > :first-child:after {
+			max-width: 9em;
+		}
+
+		body.is-ie header.major3 > h1:after {
+			max-width: 100% !important;
+		}
+
+	@media screen and (max-width: 736px) {
+
+		header.major3 > p br {
+			display: none;
+		}
+
+	}
+	
+	header.major4 {
+		width: -moz-max-content;
+		width: -webkit-max-content;
+		width: -ms-max-content;
+		width: max-content;
+		margin-bottom: 2em;
+	}
+
+		header.major4 > :first-child {
+			margin-bottom: 0;
+			width: calc(100% + 0.5em);
+		}
+
+			header.major4 > :first-child:after {
+				content: '';
+				background-color: #c8d7fa;
+				display: block;
+				height: 2px;
+				margin: 0.325em 0 0.5em 0;
+				width: 100%;
+			}
+
+		header.major4 > h1 {
+			/* font-size: 0.7em;
+			font-weight: 600;
+			letter-spacing: 0.25em;
+			margin-bottom: 0;
+			text-transform: uppercase; */
+			color: #c8d7fa;
+		}
+
+		body.is-ie header.major4 > :first-child:after {
+			max-width: 9em;
+		}
+
+		body.is-ie header.major4 > h1:after {
+			max-width: 100% !important;
+		}
+
+	@media screen and (max-width: 736px) {
+
+		header.major4 > p br {
+			display: none;
+		}
+
+	}
 /* Form */
 
 	form {
@@ -4185,13 +4279,49 @@ ul.dates {
 /* 모바일 환경 (최대 너비 768px) */
 @media (max-width: 768px) {
 .text-style2 {
-	font-size: 0.95rem; /* medium 크기 (16px) */
+	font-size: 0.72rem; /* medium 크기 (16px) */
 	}
 }
 
 /* PC 환경 (최소 너비 769px) */
 @media (min-width: 769px) {
 .text-style2 {
+	font-size: 1.5rem; /* large 크기 (20px) */
+	}
+}
+
+.text-style3 {
+	font-size: 72px; /* 기본 폰트 크기 */
+}
+
+/* 모바일 환경 (최대 너비 768px) */
+@media (max-width: 768px) {
+.text-style3 {
+	font-size: 0.63rem; /* medium 크기 (16px) */
+	}
+}
+
+/* PC 환경 (최소 너비 769px) */
+@media (min-width: 769px) {
+.text-style3 {
+	font-size: 1.5rem; /* large 크기 (20px) */
+	}
+}
+
+.text-style4 {
+	font-size: 72px; /* 기본 폰트 크기 */
+}
+
+/* 모바일 환경 (최대 너비 768px) */
+@media (max-width: 768px) {
+.text-style4 {
+	font-size: 0.9rem; /* medium 크기 (16px) */
+	}
+}
+
+/* PC 환경 (최소 너비 769px) */
+@media (min-width: 769px) {
+.text-style4 {
 	font-size: 1.5rem; /* large 크기 (20px) */
 	}
 }
