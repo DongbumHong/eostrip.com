@@ -3,26 +3,26 @@
 	<section id="contact">
 		<div class="inner">
 			<section>
-				<form method="post" action="https://script.google.com/macros/s/AKfycbxNlXPFhHd-dIENBFccZDsINxAs0SLLievc3FNPaxy-ZXAR6NgNU7rjecDQuDgUbaeUww/exec">
+				<form id="contactForm" method="post" target="hidden_iframe" action="https://script.google.com/macros/s/AKfycbzqPEla0WKoyA5vNsCWRfjbacAYPOtK7Qaaz3uZ2c0hwDH5hzZe5z-1kwnYK07vviGowQ/exec">
 					<header class="major">
 						<h3>여행 문의</h3>
 					</header>
 					<div class="fields">
 						<div class="field half">
 							<label for="name">이름</label>
-							<input type="text" name="name" id="name"  required/>
+							<input type="text" name="이름" id="name"  required/>
 						</div>
 						<div class="field half">
 							<label for="email">이메일</label>
-							<input type="text" name="email" id="email"  required/>
+							<input type="text" name="이메일" id="email"  required/>
 						</div>
 						<div class="field">
 							<label for="message">내용</label>
-							<textarea name="message" id="message" rows="15"  required></textarea>
+							<textarea name="내용" id="message" rows="15"  required></textarea>
 						</div>
 					</div>
 					<ul class="actions">
-						<li><input type="submit" value="보내기" class="primary" /></li>
+						<li><input id="sendButton" type="submit" value="보내기" class="primary" /></li>
 						<li><input type="reset" value="처음부터" /></li>
 					</ul>
 				</form>
@@ -78,31 +78,15 @@
 	</div>
 </div>
 
-<div id="result"></div>
+<!-- 보이지 않는 iframe -->
+<iframe name="hidden_iframe" style="height: 500; width: 500; background-color: red;" onload="onSubmitComplete()"></iframe>
 
 <script>
-	$(document).ready(function () {
-		$("#contactForm").on("submit", function (event) {
-			event.preventDefault(); // 기본 제출 방지
-
-			const formData = $(this).serialize(); // 폼 데이터 직렬화
-			$.ajax({
-				url: "https://script.google.com/macros/s/AKfycbxNlXPFhHd-dIENBFccZDsINxAs0SLLievc3FNPaxy-ZXAR6NgNU7rjecDQuDgUbaeUww/exec", // 실제 Google Script URL로 변경
-				type: "POST",
-				data: formData,
-				success: function (response) {
-					const result = JSON.parse(response);
-					if (result.success) {
-						$("#result").html("<p>메일 전송 성공!</p>");
-					} else {
-						$("#result").html("<p>오류: " + result.message + "</p>");
-					}
-				},
-				error: function () {
-					$("#result").html("<p>서버 오류 발생!</p>");
-				},
-			});
+	document.addEventListener('DOMContentLoaded', function() {
+		var sendButton = document.getElementById('sendButton');
+		// 폼 제출을 막지 않습니다. 기본 동작이 그대로 실행됩니다.
+		sendButton.addEventListener('click', function(event) {
+			alert("메일을 발송했습니다.");
 		});
 	});
 </script>
-<script data-cfasync="false" type="text/javascript" src="../assets/js/mailform.js"></script>
