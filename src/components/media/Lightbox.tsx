@@ -146,39 +146,41 @@ export default function Lightbox({ images }: LightboxProps) {
             )}
           </div>
 
-          {/* 하단 썸네일 스트립 */}
+          {/* 하단 썸네일 스트립 (중앙 정렬, 넘치면 가로 스크롤) */}
           {images.length > 1 && (
             <div
               ref={thumbsRef}
-              className="flex gap-2 overflow-x-auto px-4 py-4 md:gap-3 md:px-6 md:py-5 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-paper/30"
+              className="overflow-x-auto px-4 py-4 md:px-6 md:py-5 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-paper/30"
             >
-              {images.map((img, i) => {
-                const isActive = i === activeIdx;
-                return (
-                  <button
-                    key={i}
-                    type="button"
-                    data-thumb-idx={i}
-                    onClick={() => open(i)}
-                    aria-label={`${i + 1}번 사진 보기`}
-                    aria-current={isActive}
-                    className={clsx(
-                      "relative h-14 w-20 flex-none overflow-hidden rounded-md bg-paper/10 transition-all md:h-16 md:w-24",
-                      isActive
-                        ? "opacity-100 ring-2 ring-sakura-500 ring-offset-2 ring-offset-black"
-                        : "opacity-60 hover:opacity-100",
-                    )}
-                  >
-                    <Image
-                      src={img.src}
-                      alt=""
-                      fill
-                      sizes="96px"
-                      className="object-cover"
-                    />
-                  </button>
-                );
-              })}
+              <div className="mx-auto flex w-fit min-w-full justify-center gap-2 md:gap-3">
+                {images.map((img, i) => {
+                  const isActive = i === activeIdx;
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      data-thumb-idx={i}
+                      onClick={() => open(i)}
+                      aria-label={`${i + 1}번 사진 보기`}
+                      aria-current={isActive}
+                      className={clsx(
+                        "relative h-14 w-20 flex-none overflow-hidden rounded-md bg-paper/10 transition-all md:h-16 md:w-24",
+                        isActive
+                          ? "opacity-100 ring-2 ring-sakura-500 ring-offset-2 ring-offset-black"
+                          : "opacity-60 hover:opacity-100",
+                      )}
+                    >
+                      <Image
+                        src={img.src}
+                        alt=""
+                        fill
+                        sizes="96px"
+                        className="object-cover"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>

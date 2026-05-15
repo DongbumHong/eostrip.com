@@ -11,7 +11,15 @@
       "PowerShell(Get-Item *)",
       "Bash(Get-ChildItem *)",
       "PowerShell(Remove-Item *)",
-      "Bash(curl -fsS http://localhost:3000/ -o /dev/null)"
+      "Bash(curl -fsS http://localhost:3000/ -o /dev/null)",
+      "PowerShell(Get-Process *)",
+      "Read(//tmp/**)",
+      "Bash(curl -fsS \"http://localhost:3000/gallery/sutton-hakata\" -o /tmp/g.html)",
+      "Bash(curl -fsS http://localhost:3000/ -o /tmp/h.html)",
+      "Bash(curl -fsS http://localhost:3000/private -o /tmp/p.html)",
+      "PowerShell($routes = @\\('/', '/private', '/golf'\\); foreach \\($r in $routes\\) { try { $res = Invoke-WebRequest -Uri \"http://localhost:3000$r\" -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop; \"{0,-12} {1}\" -f $r, $res.StatusCode } catch { \"{0,-12} ERR\" -f $r } })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000/\" -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop; \"Home: \" + $r.StatusCode + \" \\(\" + $r.RawContentLength + \" bytes\\)\" } catch { \"ERR: \" + $_.Exception.Message })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000/\" -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop; \"Home: \" + $r.StatusCode } catch { \"ERR: \" + $_.Exception.Message })"
     ]
   }
 }

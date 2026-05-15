@@ -242,26 +242,6 @@ export const tours: Tour[] = [
     depositPercent: 50,
   },
   {
-    slug: "omakase",
-    title: "큐슈 오마카세 일일투어",
-    region: "후쿠오카현",
-    summary:
-      "큐슈의 매력을 한껏 즐기며, 맞춤형 여행을 원하는 분들에게 완벽한 여행 경험을 제공합니다.",
-    descriptionParagraphs: [
-      "큐슈의 매력을 한껏 즐기며, 맞춤형 여행을 원하는 분들에게 완벽한 여행 경험을 제공합니다. 오마카세 프라이빗 여행 / 일일투어는 고객님의 니즈를 반영한 개인화된 맞춤 여행 서비스를 통해 큐슈의 다양한 명소와 맛을 깊이 탐험할 수 있는 특별한 기회를 제공합니다. 여유롭고 편안하게 큐슈를 여행하며, 현지의 진정한 매력을 만끽할 수 있습니다.",
-    ],
-    hero: {
-      src: "/main/images/detail/private/omakase.jpg",
-      alt: "큐슈 오마카세 식사",
-    },
-    duration: "전일 (협의)",
-    startTime: "협의",
-    minParticipants: 2,
-    doorToDoor: true,
-    highlights: ["고객 요구에 맞춘 개인화된 일정", "맛집·관광지 큐레이션"],
-    depositPercent: 50,
-  },
-  {
     slug: "aso",
     title: "아소산 · 쿠사센리 · 다이칸보 코스",
     region: "구마모토현 아소",
@@ -304,6 +284,26 @@ export const tours: Tour[] = [
         { groupSize: 12, price: 85000 },
       ],
     },
+    depositPercent: 50,
+  },
+  {
+    slug: "omakase",
+    title: "큐슈 오마카세 일일투어",
+    region: "후쿠오카현",
+    summary:
+      "큐슈의 매력을 한껏 즐기며, 맞춤형 여행을 원하는 분들에게 완벽한 여행 경험을 제공합니다.",
+    descriptionParagraphs: [
+      "큐슈의 매력을 한껏 즐기며, 맞춤형 여행을 원하는 분들에게 완벽한 여행 경험을 제공합니다. 오마카세 프라이빗 여행 / 일일투어는 고객님의 니즈를 반영한 개인화된 맞춤 여행 서비스를 통해 큐슈의 다양한 명소와 맛을 깊이 탐험할 수 있는 특별한 기회를 제공합니다. 여유롭고 편안하게 큐슈를 여행하며, 현지의 진정한 매력을 만끽할 수 있습니다.",
+    ],
+    hero: {
+      src: "/main/images/detail/private/omakase.jpg",
+      alt: "큐슈 오마카세 식사",
+    },
+    duration: "전일 (협의)",
+    startTime: "협의",
+    minParticipants: 2,
+    doorToDoor: true,
+    highlights: ["고객 요구에 맞춘 개인화된 일정", "맛집·관광지 큐레이션"],
     depositPercent: 50,
   },
 ];

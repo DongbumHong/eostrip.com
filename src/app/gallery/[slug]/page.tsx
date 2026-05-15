@@ -183,15 +183,17 @@ export default function GalleryDetail({
               {g.driveFrom.city}에서 차로 약 {g.driveFrom.minutes}분
             </span>
           )}
-          {g.notes?.map((n, i) => (
-            <span
-              key={i}
-              className="inline-flex items-center gap-1 rounded-full bg-mist px-3 py-1 text-slate-600"
-            >
-              <MapPin className="h-3 w-3 text-sakura-500" aria-hidden />
-              {n}
-            </span>
-          ))}
+          {g.notes
+            ?.filter((n) => !n.includes("차로") && !n.includes("분 정도"))
+            .map((n, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-1 rounded-full bg-mist px-3 py-1 text-slate-600"
+              >
+                <MapPin className="h-3 w-3 text-sakura-500" aria-hidden />
+                {n}
+              </span>
+            ))}
         </div>
 
         {g.website && (
