@@ -14,14 +14,14 @@ const mplus = M_PLUS_1p({
 export const metadata: Metadata = {
   metadataBase: new URL("https://eostrip.com"),
   title: {
-    default: "EOS TRIP — 큐슈 여행 전문",
-    template: "%s | EOS TRIP",
+    default: "EOS TRIP | 큐슈 여행 전문",
+    template: "EOS TRIP | %s",
   },
   description:
     "큐슈 지역 프라이빗 투어와 골프백 투어 전문. 후쿠오카·사가·나가사키·유후인까지, 일본 큐슈의 모든 추억을 에오스 트립과 함께.",
   icons: { icon: "/favicon.ico" },
   openGraph: {
-    title: "EOS TRIP — 큐슈 여행 전문",
+    title: "EOS TRIP | 큐슈 여행 전문",
     description: "큐슈의 맛과 멋, 즐거움이 가득한 추억 만들기.",
     locale: "ko_KR",
     type: "website",

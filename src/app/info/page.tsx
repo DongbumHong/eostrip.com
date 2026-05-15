@@ -17,7 +17,7 @@ import { site } from "@/data/site";
 import { info } from "@/data/info";
 
 export const metadata: Metadata = {
-  title: "에오스 트립 소개 · 여행 문의",
+  title: "에오스 트립",
   description:
     "후쿠오카 현지에서 30년, 큐슈 여행 전문 에오스 트립의 회사 소개와 여행 문의 페이지.",
 };

@@ -78,11 +78,11 @@ export default function Banner({
             )}
             {ctas && ctas.length > 0 && (
               <div className="mt-8 flex flex-wrap gap-3">
-                {ctas.map((cta, i) => (
+                {ctas.map((cta) => (
                   <Button
                     key={cta.href}
                     href={cta.href}
-                    variant={i === 0 ? "primary" : "soft"}
+                    variant="primary"
                     size="lg"
                   >
                     {cta.label}

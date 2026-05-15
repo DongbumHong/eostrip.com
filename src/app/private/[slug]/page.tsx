@@ -91,13 +91,7 @@ export default function PrivateTourDetail({
                     <Users className="h-4 w-4 text-sakura-500" aria-hidden />
                     {tour.minParticipants}인부터 출발
                   </span>
-                )}
-                {tour.doorToDoor && (
-                  <span className="inline-flex items-center gap-2 rounded-full bg-paper px-4 py-2 text-sm font-medium text-navy-700 shadow-card">
-                    <DoorClosed className="h-4 w-4 text-sakura-500" aria-hidden />
-                    Door To Door
-                  </span>
-                )}
+                )}                
               </div>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card md:aspect-[5/4]">
